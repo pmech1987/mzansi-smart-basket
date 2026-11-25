@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mzansi-smart-basket-v5';
+const CACHE_NAME = 'mzansi-smart-basket-v9';
 const APP_SHELL = [
   './',
   './index.html',

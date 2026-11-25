@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-25T12:28:00+02:00",
-  "sourceNote": "75-item multi-department SA catalogue (upload store PDFs to pamphlets/ on GitHub to extract unlimited live specials)",
+  "updatedAt": "2026-11-25T13:10:00+02:00",
+  "sourceNote": "Starter catalogue (run GitHub Actions daily auto-fetch or upload pamphlets to pamphlets/ for unlimited live items)",
   "products": [
     {
       "id": "maize_10kg",
@@ -12,7 +12,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-08",
       "stores": [
         {
           "store": "Boxer",
@@ -38,7 +38,10 @@
           "rewardPrice": 115.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/",
+      "prevBestPrice": 114.99
     },
     {
       "id": "oil_2l",
@@ -50,7 +53,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -76,7 +79,9 @@
           "rewardPrice": 69.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "rice_10kg",
@@ -88,7 +93,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-08",
       "stores": [
         {
           "store": "Boxer",
@@ -108,7 +113,9 @@
           "rewardPrice": 174.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "flour_10kg",
@@ -120,7 +127,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-08",
       "stores": [
         {
           "store": "Boxer",
@@ -140,7 +147,9 @@
           "rewardPrice": 136.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "sugar_2_5kg",
@@ -152,7 +161,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -172,7 +181,9 @@
           "rewardPrice": 52.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "samp_2_5kg",
@@ -188,7 +199,7 @@
         "North West",
         "Free State"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -208,7 +219,9 @@
           "rewardPrice": 33.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "oats_1kg",
@@ -220,7 +233,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Checkers",
@@ -240,7 +253,9 @@
           "rewardPrice": 39.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/checkers"
     },
     {
       "id": "maize_5kg",
@@ -252,7 +267,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-11-28",
       "stores": [
         {
           "store": "Shoprite",
@@ -272,7 +287,9 @@
           "rewardPrice": 55.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-25",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "chicken_5kg",
@@ -284,7 +301,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -310,7 +327,10 @@
           "rewardPrice": 199.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/",
+      "prevBestPrice": 204.99
     },
     {
       "id": "russians_1kg",
@@ -322,7 +342,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -348,7 +368,10 @@
           "rewardPrice": 65.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/",
+      "prevBestPrice": 67.99
     },
     {
       "id": "viennas_1kg",
@@ -360,7 +383,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -380,7 +403,9 @@
           "rewardPrice": 59.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "pies_deli_2pk",
@@ -392,7 +417,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-11-28",
       "stores": [
         {
           "store": "Shoprite",
@@ -418,7 +443,9 @@
           "rewardPrice": 34.0,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-25",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "frozen_pies_4pk",
@@ -430,7 +457,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Checkers",
@@ -450,7 +477,9 @@
           "rewardPrice": 61.99,
           "card": "boxer"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/checkers"
     },
     {
       "id": "boerewors_1kg",
@@ -462,7 +491,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-11-28",
       "stores": [
         {
           "store": "Boxer",
@@ -488,7 +517,9 @@
           "rewardPrice": 104.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-25",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "beef_chuck_1kg",
@@ -504,7 +535,7 @@
         "North West",
         "Free State"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -524,7 +555,9 @@
           "rewardPrice": 114.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "beef_mince_1kg",
@@ -536,7 +569,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -556,7 +589,9 @@
           "rewardPrice": 104.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "polony_1kg",
@@ -568,7 +603,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -588,7 +623,9 @@
           "rewardPrice": 35.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "pork_pack_1kg",
@@ -600,7 +637,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-11-28",
       "stores": [
         {
           "store": "Boxer",
@@ -620,7 +657,9 @@
           "rewardPrice": 79.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-25",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "chicken_livers_1kg",
@@ -632,7 +671,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -646,7 +685,9 @@
           "rewardPrice": 38.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "milk_6x1l",
@@ -658,7 +699,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -684,7 +725,9 @@
           "rewardPrice": 94.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "eggs_30",
@@ -696,7 +739,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -716,7 +759,9 @@
           "rewardPrice": 69.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "cheddar_800g",
@@ -728,7 +773,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Checkers",
@@ -748,7 +793,9 @@
           "rewardPrice": 104.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/checkers"
     },
     {
       "id": "margarine_500g",
@@ -760,7 +807,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -780,7 +827,9 @@
           "rewardPrice": 23.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "maas_2l",
@@ -792,7 +841,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -812,7 +861,9 @@
           "rewardPrice": 29.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "yoghurt_6pk",
@@ -824,7 +875,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -844,7 +895,9 @@
           "rewardPrice": 21.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "bread_brown",
@@ -856,7 +909,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-11-28",
       "stores": [
         {
           "store": "Boxer",
@@ -876,7 +929,9 @@
           "rewardPrice": 31.0,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-25",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "bread_white",
@@ -888,7 +943,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -908,7 +963,9 @@
           "rewardPrice": 18.49,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "hotdog_rolls_6pk",
@@ -920,7 +977,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-11-28",
       "stores": [
         {
           "store": "Shoprite",
@@ -940,7 +997,9 @@
           "rewardPrice": 16.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-25",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "muffins_6pk",
@@ -952,7 +1011,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Checkers",
@@ -972,7 +1031,9 @@
           "rewardPrice": 32.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/checkers"
     },
     {
       "id": "potatoes_7kg",
@@ -984,7 +1045,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -1004,7 +1065,9 @@
           "rewardPrice": 72.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "onions_7kg",
@@ -1016,7 +1079,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -1036,7 +1099,9 @@
           "rewardPrice": 62.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "tomatoes_2kg",
@@ -1048,7 +1113,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-11-28",
       "stores": [
         {
           "store": "Boxer",
@@ -1068,7 +1133,9 @@
           "rewardPrice": 32.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-25",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "apples_1_5kg",
@@ -1080,7 +1147,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1100,7 +1167,9 @@
           "rewardPrice": 29.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "bananas_1kg",
@@ -1116,7 +1185,7 @@
         "North West",
         "Free State"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-11-28",
       "stores": [
         {
           "store": "Boxer",
@@ -1136,7 +1205,9 @@
           "rewardPrice": 16.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-25",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "cabbage_each",
@@ -1148,7 +1219,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -1168,7 +1239,9 @@
           "rewardPrice": 17.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "veg_combo_4pk",
@@ -1180,7 +1253,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1200,7 +1273,9 @@
           "rewardPrice": 119.99,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "pilchards_400g",
@@ -1212,7 +1287,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -1232,7 +1307,9 @@
           "rewardPrice": 47.0,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "baked_beans_410g",
@@ -1244,7 +1321,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-08",
       "stores": [
         {
           "store": "Shoprite",
@@ -1264,7 +1341,9 @@
           "rewardPrice": 52.0,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "rooibos_80s",
@@ -1276,7 +1355,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1296,7 +1375,9 @@
           "rewardPrice": 44.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "coffee_750g",
@@ -1308,7 +1389,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -1328,7 +1409,9 @@
           "rewardPrice": 112.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "peanut_butter_400g",
@@ -1340,7 +1423,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -1360,7 +1443,9 @@
           "rewardPrice": 34.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "pasta_500g",
@@ -1372,7 +1457,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -1392,7 +1477,9 @@
           "rewardPrice": 31.0,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "mayo_750g",
@@ -1404,7 +1491,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Checkers",
@@ -1424,7 +1511,9 @@
           "rewardPrice": 39.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/checkers"
     },
     {
       "id": "spices_combo",
@@ -1436,7 +1525,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -1450,7 +1539,9 @@
           "rewardPrice": 32.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "colddrink_2l_2pk",
@@ -1462,7 +1553,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-11-28",
       "stores": [
         {
           "store": "Shoprite",
@@ -1482,7 +1573,9 @@
           "rewardPrice": 41.0,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-25",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "chips_120g_3pk",
@@ -1494,7 +1587,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1514,7 +1607,9 @@
           "rewardPrice": 48.0,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "biscuits_200g_2pk",
@@ -1526,7 +1621,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -1546,7 +1641,9 @@
           "rewardPrice": 28.0,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "juice_2l",
@@ -1558,7 +1655,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Checkers",
@@ -1578,7 +1675,9 @@
           "rewardPrice": 54.0,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/checkers"
     },
     {
       "id": "energy_drink_4pk",
@@ -1590,7 +1689,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-11-28",
       "stores": [
         {
           "store": "Shoprite",
@@ -1610,7 +1709,9 @@
           "rewardPrice": 44.0,
           "card": "spar"
         }
-      ]
+      ],
+      "validFrom": "2026-11-25",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "chocolates_2pk",
@@ -1622,7 +1723,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Checkers",
@@ -1642,7 +1743,9 @@
           "rewardPrice": 34.0,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/checkers"
     },
     {
       "id": "washing_combo",
@@ -1654,7 +1757,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-08",
       "stores": [
         {
           "store": "Shoprite",
@@ -1674,7 +1777,9 @@
           "rewardPrice": 82.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "tp_18roll",
@@ -1686,7 +1791,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Checkers",
@@ -1706,7 +1811,10 @@
           "rewardPrice": 104.99,
           "card": "boxer"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/checkers",
+      "prevBestPrice": 112.99
     },
     {
       "id": "bleach_750ml_2pk",
@@ -1718,7 +1826,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1738,7 +1846,9 @@
           "rewardPrice": 44.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "fabric_softener_2l",
@@ -1750,7 +1860,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1770,7 +1880,9 @@
           "rewardPrice": 51.99,
           "card": "boxer"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "black_bags_20s",
@@ -1782,7 +1894,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Boxer",
@@ -1796,7 +1908,9 @@
           "rewardPrice": 22.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.latestspecials.co.za/boxer/"
     },
     {
       "id": "dish_liquid_750ml",
@@ -1808,7 +1922,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1828,7 +1942,9 @@
           "rewardPrice": 30.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "nappies_jumbo",
@@ -1840,7 +1956,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1860,7 +1976,9 @@
           "rewardPrice": 194.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "bath_soap_6pk",
@@ -1872,7 +1990,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1892,7 +2010,9 @@
           "rewardPrice": 54.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "toothpaste_100ml_2pk",
@@ -1904,7 +2024,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1924,7 +2044,9 @@
           "rewardPrice": 30.0,
           "card": "boxer"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "rollon_50ml_2pk",
@@ -1936,7 +2058,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Checkers",
@@ -1956,7 +2078,9 @@
           "rewardPrice": 39.0,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/checkers"
     },
     {
       "id": "body_lotion_400ml",
@@ -1968,7 +2092,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -1988,7 +2112,9 @@
           "rewardPrice": 41.99,
           "card": "boxer"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "airfryer_5l",
@@ -2000,7 +2126,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -2026,7 +2152,10 @@
           "rewardPrice": 999.0,
           "card": null
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite",
+      "prevBestPrice": 949.0
     },
     {
       "id": "microwave_20l",
@@ -2038,7 +2167,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -2064,7 +2193,10 @@
           "rewardPrice": 1099.0,
           "card": null
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite",
+      "prevBestPrice": 1099.0
     },
     {
       "id": "kettle_1_7l",
@@ -2076,7 +2208,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -2102,7 +2234,9 @@
           "rewardPrice": 199.0,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "steam_iron",
@@ -2114,7 +2248,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -2134,7 +2268,9 @@
           "rewardPrice": 229.0,
           "card": null
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "hotplate_2plate",
@@ -2146,7 +2282,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -2166,7 +2302,9 @@
           "rewardPrice": 319.0,
           "card": null
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "powerbank_20000",
@@ -2178,7 +2316,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "PEP",
@@ -2198,7 +2336,9 @@
           "rewardPrice": 259.0,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/"
     },
     {
       "id": "smartphone_4g",
@@ -2210,7 +2350,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "PEP",
@@ -2230,7 +2370,9 @@
           "rewardPrice": 1149.0,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/"
     },
     {
       "id": "bt_speaker",
@@ -2242,7 +2384,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -2262,7 +2404,9 @@
           "rewardPrice": 449.99,
           "card": null
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "pedestal_fan",
@@ -2274,7 +2418,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Shoprite",
@@ -2294,7 +2438,9 @@
           "rewardPrice": 289.0,
           "card": null
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/shoprite"
     },
     {
       "id": "smart_tv_32",
@@ -2306,7 +2452,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "Checkers",
@@ -2326,7 +2472,9 @@
           "rewardPrice": 2249.0,
           "card": null
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/checkers"
     },
     {
       "id": "kids_2pack",
@@ -2338,7 +2486,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "PEP",
@@ -2358,7 +2506,9 @@
           "rewardPrice": 129.99,
           "card": "smart"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/"
     },
     {
       "id": "summer_sliders",
@@ -2370,7 +2520,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "PEP",
@@ -2384,7 +2534,9 @@
           "rewardPrice": 79.99,
           "card": null
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/"
     },
     {
       "id": "mens_tees_2pk",
@@ -2396,7 +2548,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-02",
       "stores": [
         {
           "store": "PEP",
@@ -2416,7 +2568,9 @@
           "rewardPrice": 129.99,
           "card": null
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/"
     },
     {
       "id": "school_shoes",
@@ -2428,7 +2582,7 @@
       "provinces": [
         "All"
       ],
-      "validUntil": "Weekly Pamphlet",
+      "validUntil": "2026-12-08",
       "stores": [
         {
           "store": "PEP",
@@ -2448,7 +2602,9 @@
           "rewardPrice": 169.99,
           "card": "xtra"
         }
-      ]
+      ],
+      "validFrom": "2026-11-23",
+      "sourceUrl": "https://www.guzzle.co.za/"
     }
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "name": "Mzansi Smart Basket",
+  "short_name": "Mzansi Basket",
+  "description": "Live South African retail specials, store price comparator, rewards calculator & voice budget checklist.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#ea580c",
+  "icons": []
+}

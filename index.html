@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Mzansi Basket" />
+  <meta name="theme-color" content="#ea580c" />
+  <title>Mzansi Smart Basket — Live SA Specials, Store Compare, Rewards &amp; Voice Planner</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    .tab-btn.active {
+      background-color: #fff7ed;
+      color: #c2410c;
+      font-weight: 700;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade { animation: fadeIn 0.2s ease-out; }
+    @keyframes pulseRing { 0% { box-shadow: 0 0 0 0 rgba(234,88,12,0.5); } 70% { box-shadow: 0 0 0 12px rgba(234,88,12,0); } 100% { box-shadow: 0 0 0 0 rgba(234,88,12,0); } }
+    .mic-live { animation: pulseRing 1.4s infinite; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Top Header -->
+  <header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-orange-500 to-rose-600 text-white flex items-center justify-center font-black text-sm shadow-sm shrink-0">
+          MB
+        </div>
+        <div class="min-w-0">
+          <div class="font-extrabold text-slate-900 text-sm sm:text-base truncate leading-tight">Mzansi Smart Basket</div>
+          <div class="text-[11px] text-orange-700 font-semibold truncate">Live SA Specials • Rewards • Voice Budget</div>
+        </div>
+      </div>
+
+      <!-- Desktop Nav (4 clean tabs) -->
+      <nav class="hidden lg:flex items-center gap-1 shrink-0">
+        <button data-tab="specials" class="tab-btn active whitespace-nowrap px-3 py-2 rounded-lg text-xs xl:text-sm text-slate-600 hover:bg-slate-100 transition flex items-center gap-1.5">
+          <i data-lucide="tag" class="w-4 h-4"></i> Specials &amp; Compare
+        </button>
+        <button data-tab="basket" class="tab-btn whitespace-nowrap px-3 py-2 rounded-lg text-xs xl:text-sm text-slate-600 hover:bg-slate-100 transition flex items-center gap-1.5">
+          <i data-lucide="shopping-basket" class="w-4 h-4"></i> My Basket &amp; Budget
+        </button>
+        <button data-tab="rewards" class="tab-btn whitespace-nowrap px-3 py-2 rounded-lg text-xs xl:text-sm text-slate-600 hover:bg-slate-100 transition flex items-center gap-1.5">
+          <i data-lucide="credit-card" class="w-4 h-4"></i> Rewards Cards
+        </button>
+        <button data-tab="assistant" class="tab-btn whitespace-nowrap px-3 py-2 rounded-lg text-xs xl:text-sm text-slate-600 hover:bg-slate-100 transition flex items-center gap-1.5">
+          <i data-lucide="mic" class="w-4 h-4"></i> Voice &amp; Smart Helper
+        </button>
+      </nav>
+
+      <!-- Province + Basket Pill -->
+      <div class="flex items-center gap-1.5 shrink-0">
+        <select id="province-select" aria-label="Province" class="px-2 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 max-w-[130px]">
+          <option value="Gauteng">Gauteng</option>
+          <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+          <option value="Western Cape">Western Cape</option>
+          <option value="Mpumalanga">Mpumalanga</option>
+          <option value="Eastern Cape">Eastern Cape</option>
+          <option value="Limpopo">Limpopo</option>
+          <option value="Free State">Free State</option>
+          <option value="North West">North West</option>
+          <option value="Northern Cape">Northern Cape</option>
+        </select>
+        <button id="hdr-basket-btn" class="px-3 py-1.5 rounded-full bg-orange-600 text-white text-xs font-extrabold hover:bg-orange-700 transition flex items-center gap-1.5 shadow-sm">
+          <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+          <span id="hdr-basket-total">R 0</span>
+        </button>
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" aria-label="Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-nav" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-3 grid grid-cols-2 gap-2">
+      <button data-tab="specials" class="tab-btn active px-3 py-2 rounded-lg text-sm text-left flex items-center gap-2"><i data-lucide="tag" class="w-4 h-4"></i> Specials</button>
+      <button data-tab="basket" class="tab-btn px-3 py-2 rounded-lg text-sm text-left flex items-center gap-2"><i data-lucide="shopping-basket" class="w-4 h-4"></i> Basket</button>
+      <button data-tab="rewards" class="tab-btn px-3 py-2 rounded-lg text-sm text-left flex items-center gap-2"><i data-lucide="credit-card" class="w-4 h-4"></i> Rewards</button>
+      <button data-tab="assistant" class="tab-btn px-3 py-2 rounded-lg text-sm text-left flex items-center gap-2"><i data-lucide="mic" class="w-4 h-4"></i> Voice Helper</button>
+    </div>
+  </header>
+
+  <main id="app-main" class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6"></main>
+
+  <!-- Live Pamphlet Directory Footer -->
+  <footer class="mt-8 border-t border-slate-200 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs">
+      <div>
+        <div class="font-bold text-sm">Browse Live Weekly SA Pamphlets Online</div>
+        <p class="text-slate-400 mt-0.5">Connect your weekly <code class="text-orange-300">deals.json</code> feed above for automatic updates, or verify till prices on official leaflets:</p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <a href="https://www.guzzle.co.za/shoprite" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-rose-600 text-white font-bold hover:bg-rose-500">Shoprite ↗</a>
+        <a href="https://www.latestspecials.co.za/boxer/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-red-600 text-white font-bold hover:bg-red-500">Boxer ↗</a>
+        <a href="https://www.guzzle.co.za/pick-n-pay" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-500">Pick n Pay ↗</a>
+        <a href="https://www.guzzle.co.za/checkers" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-teal-600 text-white font-bold hover:bg-teal-500">Checkers ↗</a>
+        <a href="https://www.guzzle.co.za/spar" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-bold hover:bg-emerald-500">SPAR ↗</a>
+        <a href="https://www.guzzle.co.za/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-400 text-slate-950 font-bold hover:bg-amber-300">All Catalogues (Guzzle) ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="hidden fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-2.5 rounded-xl shadow-lg text-sm font-medium animate-fade"></div>
+
+  <script>
+    const STORAGE_KEY = 'mzansi_smart_basket_v2';
+    const FEED_CACHE_KEY = 'mzansi_smart_basket_feed_cache_v2';
+
+    // Built-in fallback sample dataset (used if offline and no deals.json is cached yet)
+    const SAMPLE_CATALOG = [
+      {
+        id: 'p1', name: '10kg White Maize Meal', category: 'Staples', emoji: '🌽',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Boxer', price: 109.99, rewardPrice: 104.99, card: 'boxer' },
+          { store: 'Shoprite', price: 114.99, rewardPrice: 106.99, card: 'xtra' },
+          { store: 'Pick n Pay', price: 119.99, rewardPrice: 112.99, card: 'smart' },
+          { store: 'SPAR', price: 122.99, rewardPrice: 115.99, card: 'spar' }
+        ]
+      },
+      {
+        id: 'p2', name: '2L Sunflower Cooking Oil', category: 'Staples', emoji: '🌻',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Shoprite', price: 69.99, rewardPrice: 64.99, card: 'xtra' },
+          { store: 'Boxer', price: 68.99, rewardPrice: 65.99, card: 'boxer' },
+          { store: 'Checkers', price: 74.99, rewardPrice: 66.99, card: 'xtra' },
+          { store: 'Pick n Pay', price: 76.99, rewardPrice: 69.99, card: 'smart' }
+        ]
+      },
+      {
+        id: 'p3', name: '10kg Parboiled Rice', category: 'Staples', emoji: '🍚',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Boxer', price: 169.99, rewardPrice: 164.99, card: 'boxer' },
+          { store: 'Shoprite', price: 179.99, rewardPrice: 169.99, card: 'xtra' },
+          { store: 'Pick n Pay', price: 184.99, rewardPrice: 174.99, card: 'smart' }
+        ]
+      },
+      {
+        id: 'p4', name: '2.5kg Brown Sugar', category: 'Staples', emoji: '🧂',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Shoprite', price: 54.99, rewardPrice: 49.99, card: 'xtra' },
+          { store: 'Boxer', price: 52.99, rewardPrice: 49.99, card: 'boxer' },
+          { store: 'SPAR', price: 57.99, rewardPrice: 52.99, card: 'spar' }
+        ]
+      },
+      {
+        id: 'p5', name: '5kg IQF Mixed Chicken Portions', category: 'Food & Meat', emoji: '🍗',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Boxer', price: 199.99, rewardPrice: 189.99, card: 'boxer' },
+          { store: 'Shoprite', price: 214.99, rewardPrice: 194.99, card: 'xtra' },
+          { store: 'Pick n Pay', price: 219.99, rewardPrice: 199.99, card: 'smart' },
+          { store: 'Checkers', price: 224.99, rewardPrice: 199.99, card: 'xtra' }
+        ]
+      },
+      {
+        id: 'p6', name: '6 x 1L Full Cream Long-Life Milk', category: 'Food & Meat', emoji: '🥛',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Checkers', price: 99.99, rewardPrice: 89.99, card: 'xtra' },
+          { store: 'Shoprite', price: 98.99, rewardPrice: 89.99, card: 'xtra' },
+          { store: 'Pick n Pay', price: 104.99, rewardPrice: 94.99, card: 'smart' },
+          { store: 'Boxer', price: 96.99, rewardPrice: 92.99, card: 'boxer' }
+        ]
+      },
+      {
+        id: 'p7', name: '30 Large Farm Eggs Tray', category: 'Food & Meat', emoji: '🥚',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Boxer', price: 69.99, rewardPrice: 66.99, card: 'boxer' },
+          { store: 'SPAR', price: 74.99, rewardPrice: 69.99, card: 'spar' },
+          { store: 'Shoprite', price: 72.99, rewardPrice: 67.99, card: 'xtra' }
+        ]
+      },
+      {
+        id: 'p8', name: '2L Fizzy Cold Drink (2-Pack Combo)', category: 'Snacks & Drinks', emoji: '🥤',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Shoprite', price: 44.00, rewardPrice: 39.00, card: 'xtra' },
+          { store: 'Boxer', price: 42.00, rewardPrice: 40.00, card: 'boxer' },
+          { store: 'Pick n Pay', price: 46.00, rewardPrice: 41.00, card: 'smart' }
+        ]
+      },
+      {
+        id: 'p9', name: '120g Potato Chips (3-Pack Combo)', category: 'Snacks & Drinks', emoji: '🍟',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Checkers', price: 54.00, rewardPrice: 45.00, card: 'xtra' },
+          { store: 'Shoprite', price: 52.00, rewardPrice: 45.00, card: 'xtra' },
+          { store: 'Pick n Pay', price: 55.00, rewardPrice: 48.00, card: 'smart' }
+        ]
+      },
+      {
+        id: 'p10', name: '2kg Washing Powder + 750ml Dish Liquid', category: 'Household', emoji: '🧺',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Shoprite', price: 89.99, rewardPrice: 79.99, card: 'xtra' },
+          { store: 'Boxer', price: 84.99, rewardPrice: 79.99, card: 'boxer' },
+          { store: 'Checkers', price: 94.99, rewardPrice: 82.99, card: 'xtra' }
+        ]
+      },
+      {
+        id: 'p11', name: '18-Roll 2-Ply Toilet Paper', category: 'Household', emoji: '🧻',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'Checkers', price: 119.99, rewardPrice: 99.99, card: 'xtra' },
+          { store: 'Pick n Pay', price: 124.99, rewardPrice: 104.99, card: 'smart' },
+          { store: 'Boxer', price: 109.99, rewardPrice: 104.99, card: 'boxer' }
+        ]
+      },
+      {
+        id: 'p12', name: 'Kids Summer T-Shirt & Shorts 2-Pack', category: 'Clothing', emoji: '👕',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'PEP', price: 99.99, rewardPrice: 99.99, card: null },
+          { store: 'Ackermans', price: 129.99, rewardPrice: 119.99, card: null }
+        ]
+      },
+      {
+        id: 'p13', name: 'Moulded Sliders / Summer Sandals', category: 'Clothing', emoji: '🩴',
+        provinces: ['All'], validUntil: 'Sample weekly price',
+        stores: [
+          { store: 'PEP', price: 59.99, rewardPrice: 59.99, card: null },
+          { store: 'Ackermans', price: 79.99, rewardPrice: 79.99, card: null }
+        ]
+      }
+    ];
+
+    const REWARD_CARDS = [
+      { id: 'xtra', name: 'Shoprite & Checkers Xtra Savings', color: 'from-rose-600 to-red-700', desc: 'Unlocks instant red-tag Xtra Savings discounts at Shoprite & Checkers.' },
+      { id: 'smart', name: 'Pick n Pay Smart Shopper', color: 'from-blue-600 to-indigo-700', desc: 'Unlocks Smart Shopper member prices & points at Pick n Pay.' },
+      { id: 'boxer', name: 'Boxer Superstores Rewards', color: 'from-red-600 to-orange-600', desc: 'Unlocks Boxer combo & digital specials savings.' },
+      { id: 'spar', name: 'SPAR Rewards', color: 'from-emerald-600 to-green-700', desc: 'Unlocks instant electronic SPAR Rewards discounts at the till.' }
+    ];
+
+    const defaultState = {
+      activeTab: 'specials',
+      province: 'Gauteng',
+      category: 'All',
+      storeFilter: 'All',
+      search: '',
+      budgetLimit: 1200,
+      feedUrl: './deals.json',
+      showFeedPanel: false,
+      activeCards: { xtra: true, smart: true, boxer: true, spar: false },
+      cardNumbers: { xtra: '', smart: '', boxer: '', spar: '' },
+      basket: [
+        { id: 'b1', productId: 'p1', name: '10kg White Maize Meal', store: 'Boxer', price: 109.99, rewardPrice: 104.99, card: 'boxer', qty: 1, checked: false },
+        { id: 'b2', productId: 'p2', name: '2L Sunflower Cooking Oil', store: 'Shoprite', price: 69.99, rewardPrice: 64.99, card: 'xtra', qty: 1, checked: false },
+        { id: 'b3', productId: 'p5', name: '5kg IQF Mixed Chicken Portions', store: 'Boxer', price: 199.99, rewardPrice: 189.99, card: 'boxer', qty: 1, checked: false }
+      ],
+      assistantReply: 'Try saying or typing: "Build a R700 staple basket", "Cheapest chicken", "Snacks under R100", or "Add rice".'
+    };
+
+    let state = { ...defaultState };
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) state = { ...defaultState, ...JSON.parse(saved) };
+    } catch (e) {}
+
+    // Active catalog & live feed metadata
+    let CATALOG = SAMPLE_CATALOG.slice();
+    let feedMeta = {
+      status: 'sample', // 'live' | 'cached' | 'local' | 'sample' | 'loading'
+      updatedAt: null,
+      sourceNote: 'Built-in editable sample deals'
+    };
+
+    function loadCachedFeed() {
+      try {
+        const raw = localStorage.getItem(FEED_CACHE_KEY);
+        if (!raw) return false;
+        const parsed = JSON.parse(raw);
+        if (parsed && Array.isArray(parsed.products) && parsed.products.length > 0) {
+          CATALOG = parsed.products;
+          feedMeta = {
+            status: parsed.imported ? 'local' : 'cached',
+            updatedAt: parsed.updatedAt || null,
+            sourceNote: parsed.sourceNote || 'Offline cached deals'
+          };
+          return true;
+        }
+      } catch (e) {}
+      return false;
+    }
+
+    function normalizeFeedPayload(data) {
+      const list = Array.isArray(data) ? data : (Array.isArray(data && data.products) ? data.products : null);
+      if (!list || !list.length) return null;
+      const cleaned = list
+        .filter(item => item && item.name && Array.isArray(item.stores) && item.stores.length > 0)
+        .map((item, idx) => ({
+          id: item.id || ('live_' + idx),
+          name: String(item.name),
+          category: String(item.category || 'Staples'),
+          emoji: String(item.emoji || '🛒'),
+          provinces: Array.isArray(item.provinces) && item.provinces.length ? item.provinces : ['All'],
+          validUntil: item.validUntil ? String(item.validUntil) : '',
+          stores: item.stores.map(st => ({
+            store: String(st.store || 'Store'),
+            price: Number(st.price) || 0,
+            rewardPrice: Number(st.rewardPrice != null ? st.rewardPrice : st.price) || 0,
+            card: st.card || null
+          })).filter(st => st.price > 0)
+        }))
+        .filter(item => item.stores.length > 0);
+      if (!cleaned.length) return null;
+      return {
+        updatedAt: (data && data.updatedAt) ? String(data.updatedAt) : new Date().toISOString(),
+        sourceNote: (data && data.sourceNote) ? String(data.sourceNote) : 'Live weekly pamphlet feed',
+        products: cleaned
+      };
+    }
+
+    function formatUpdatedAt(isoStr) {
+      if (!isoStr) return 'Not synced yet';
+      try {
+        const d = new Date(isoStr);
+        if (isNaN(d.getTime())) return String(isoStr);
+        return d.toLocaleString('en-ZA', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+      } catch (e) {
+        return String(isoStr);
+      }
+    }
+
+    async function fetchLiveDeals(userInitiated = false) {
+      const url = (state.feedUrl || '').trim();
+      if (!url) return;
+      // Avoid noisy console errors when opened directly via file:// with relative ./deals.json
+      if (window.location.protocol === 'file:' && url.startsWith('.')) {
+        if (userInitiated) showToast('Host on GitHub Pages/Netlify or use "Load Local JSON" below.');
+        return;
+      }
+      if (userInitiated) {
+        feedMeta.status = 'loading';
+        if (state.activeTab === 'specials') { renderSpecials(); lucide.createIcons(); }
+      }
+      try {
+        const sep = url.includes('?') ? '&' : '?';
+        const res = await fetch(url + sep + 't=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const raw = await res.json();
+        const normalized = normalizeFeedPayload(raw);
+        if (!normalized) throw new Error('Invalid deals.json format');
+
+        CATALOG = normalized.products;
+        feedMeta = {
+          status: 'live',
+          updatedAt: normalized.updatedAt,
+          sourceNote: normalized.sourceNote
+        };
+        try {
+          localStorage.setItem(FEED_CACHE_KEY, JSON.stringify({ ...normalized, imported: false }));
+        } catch (e) {}
+
+        if (state.activeTab === 'specials') { renderSpecials(); lucide.createIcons(); }
+        if (userInitiated) showToast(`Synced ${CATALOG.length} live specials!`);
+      } catch (err) {
+        const hadCache = loadCachedFeed();
+        if (!hadCache) {
+          CATALOG = SAMPLE_CATALOG.slice();
+          feedMeta = { status: 'sample', updatedAt: null, sourceNote: 'Built-in editable sample deals' };
+        }
+        if (state.activeTab === 'specials') { renderSpecials(); lucide.createIcons(); }
+        if (userInitiated) {
+          showToast(hadCache ? 'Offline — showing cached specials.' : 'Feed unreachable — showing built-in sample deals.');
+        }
+      }
+    }
+
+    function saveState() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.remove('hidden');
+      clearTimeout(window._mt);
+      window._mt = setTimeout(() => t.classList.add('hidden'), 2600);
+    }
+
+    function escapeHtml(s) {
+      return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function zar(n) {
+      return 'R ' + (Number(n) || 0).toFixed(2);
+    }
+
+    function effectivePrice(storeOpt) {
+      if (storeOpt.card && state.activeCards[storeOpt.card]) {
+        return storeOpt.rewardPrice;
+      }
+      return storeOpt.price;
+    }
+
+    function getCheapestOption(product) {
+      return product.stores.slice().sort((a, b) => effectivePrice(a) - effectivePrice(b))[0];
+    }
+
+    function matchesProvince(product) {
+      if (!Array.isArray(product.provinces) || !product.provinces.length) return true;
+      return product.provinces.includes('All') || product.provinces.includes(state.province);
+    }
+
+    function computeBasket() {
+      let regularTotal = 0;
+      let finalTotal = 0;
+      state.basket.forEach(item => {
+        const qty = Number(item.qty) || 1;
+        regularTotal += (Number(item.price) || 0) * qty;
+        const unit = (item.card && state.activeCards[item.card]) ? (Number(item.rewardPrice) || Number(item.price)) : (Number(item.price) || 0);
+        finalTotal += unit * qty;
+      });
+      const rewardsSaved = Math.max(0, regularTotal - finalTotal);
+      const remaining = (Number(state.budgetLimit) || 0) - finalTotal;
+      return { regularTotal, finalTotal, rewardsSaved, remaining };
+    }
+
+    function updateHeader() {
+      const b = computeBasket();
+      document.getElementById('hdr-basket-total').textContent = zar(b.finalTotal);
+      document.getElementById('province-select').value = state.province;
+    }
+
+    function addToBasket(product, storeOpt) {
+      const existing = state.basket.find(x => x.productId === product.id && x.store === storeOpt.store);
+      if (existing) {
+        existing.qty++;
+      } else {
+        state.basket.push({
+          id: 'b_' + Date.now() + Math.random().toString(16).slice(2, 5),
+          productId: product.id,
+          name: product.name,
+          store: storeOpt.store,
+          price: storeOpt.price,
+          rewardPrice: storeOpt.rewardPrice,
+          card: storeOpt.card,
+          qty: 1,
+          checked: false
+        });
+      }
+      saveState();
+      updateHeader();
+      showToast(`Added ${product.name} (${storeOpt.store}) to basket`);
+    }
+
+    function renderFeedBadge() {
+      if (feedMeta.status === 'live') {
+        return `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Live Feed • Updated ${escapeHtml(formatUpdatedAt(feedMeta.updatedAt))}</span>`;
+      }
+      if (feedMeta.status === 'cached') {
+        return `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Offline Cache • Saved ${escapeHtml(formatUpdatedAt(feedMeta.updatedAt))}</span>`;
+      }
+      if (feedMeta.status === 'local') {
+        return `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-800 text-xs font-bold"><span class="w-2 h-2 rounded-full bg-indigo-500"></span> Imported JSON • ${escapeHtml(formatUpdatedAt(feedMeta.updatedAt))}</span>`;
+      }
+      if (feedMeta.status === 'loading') {
+        return `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-bold">Syncing live deals...</span>`;
+      }
+      return `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold"><span class="w-2 h-2 rounded-full bg-slate-400"></span> Built-in Sample Deals (${CATALOG.length} items)</span>`;
+    }
+
+    // =========================================================================
+    // VIEW 1: SPECIALS & STORE COMPARISON
+    // =========================================================================
+    function renderSpecials() {
+      const categories = ['All', 'Staples', 'Food & Meat', 'Snacks & Drinks', 'Household', 'Clothing'];
+      const storeSet = new Set(['Shoprite', 'Boxer', 'Pick n Pay', 'Checkers', 'SPAR', 'PEP', 'Ackermans']);
+      CATALOG.forEach(p => p.stores.forEach(st => storeSet.add(st.store)));
+      const stores = ['All', ...Array.from(storeSet)];
+      const q = (state.search || '').trim().toLowerCase();
+
+      const filtered = CATALOG.filter(p => {
+        if (!matchesProvince(p)) return false;
+        if (state.category !== 'All' && p.category !== state.category) return false;
+        if (state.storeFilter !== 'All' && !p.stores.some(st => st.store === state.storeFilter)) return false;
+        if (q && !p.name.toLowerCase().includes(q) && !p.category.toLowerCase().includes(q)) return false;
+        return true;
+      });
+
+      const b = computeBasket();
+
+      document.getElementById('app-main').innerHTML = `
+        <div class="space-y-5 animate-fade">
+          <!-- Hero -->
+          <section class="rounded-2xl bg-gradient-to-br from-orange-600 via-rose-600 to-slate-900 text-white p-6 shadow-lg flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-white/15 text-orange-100 text-xs font-bold mb-2">📍 ${escapeHtml(state.province)} • Rewards Cards Auto-Applied</span>
+              <h1 class="text-2xl sm:text-3xl font-black tracking-tight">Compare SA Specials Before You Walk Into the Shop</h1>
+              <p class="text-orange-100 text-sm mt-1 max-w-2xl">Tap any store price to add it to your budget basket. Connect your weekly <code class="bg-white/15 px-1.5 py-0.5 rounded text-xs">deals.json</code> feed for automatic store updates with offline caching.</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-4 min-w-[220px] shrink-0">
+              <div class="text-xs uppercase font-bold text-orange-200">Your Basket Total</div>
+              <div class="text-3xl font-black mt-0.5">${zar(b.finalTotal)}</div>
+              <div class="text-xs text-emerald-200 font-semibold mt-1">Rewards Saved: ${zar(b.rewardsSaved)}</div>
+              <button id="sp-go-basket" class="mt-3 w-full py-2 rounded-xl bg-white text-orange-700 font-extrabold text-xs hover:bg-orange-50 transition">Open Shopping Checklist →</button>
+            </div>
+          </section>
+
+          <!-- Live Feed Status & Sync Bar -->
+          <section class="bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-2">
+                ${renderFeedBadge()}
+                <span class="text-xs text-slate-500 hidden sm:inline">${escapeHtml(feedMeta.sourceNote)}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="refresh-feed-btn" class="px-3 py-1.5 rounded-xl bg-orange-50 text-orange-700 border border-orange-200 text-xs font-bold hover:bg-orange-100 transition flex items-center gap-1.5">
+                  <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Refresh
+                </button>
+                <button id="toggle-feed-panel-btn" class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 border border-slate-200 text-xs font-bold hover:bg-slate-200 transition flex items-center gap-1.5">
+                  <i data-lucide="database" class="w-3.5 h-3.5"></i> Live Feed Setup
+                </button>
+              </div>
+            </div>
+
+            ${state.showFeedPanel ? `
+              <div class="pt-3 border-t border-slate-100 grid grid-cols-1 lg:grid-cols-12 gap-3 items-end">
+                <form id="feed-url-form" class="lg:col-span-7 flex flex-col sm:flex-row gap-2">
+                  <div class="flex-1">
+                    <label class="block text-[11px] font-bold text-slate-600 mb-1">Live deals.json URL (GitHub Pages, Netlify, or Supabase)</label>
+                    <input id="feed-url-input" type="text" value="${escapeHtml(state.feedUrl)}" placeholder="./deals.json or https://your-site.github.io/deals.json" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-orange-400" />
+                  </div>
+                  <button type="submit" class="sm:self-end px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800 whitespace-nowrap">Save &amp; Sync</button>
+                </form>
+                <div class="lg:col-span-5 flex flex-wrap items-center justify-start lg:justify-end gap-2">
+                  <label class="px-3 py-2 rounded-xl bg-indigo-50 text-indigo-700 border border-indigo-200 text-xs font-bold hover:bg-indigo-100 cursor-pointer transition">
+                    📂 Load Local JSON
+                    <input id="import-json-input" type="file" accept=".json,application/json" class="hidden" />
+                  </label>
+                  <button id="reset-sample-btn" class="px-3 py-2 rounded-xl bg-slate-100 text-slate-600 text-xs font-bold hover:bg-slate-200 transition">Use Sample Deals</button>
+                </div>
+              </div>
+            ` : ''}
+          </section>
+
+          <!-- Search & Filters -->
+          <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex flex-wrap gap-2.5 items-center">
+              <div class="relative flex-1 min-w-[200px]">
+                <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                <input id="sp-search" type="text" value="${escapeHtml(state.search)}" placeholder="Search staples, chicken, snacks, oil, kids clothes..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400" />
+              </div>
+              <select id="sp-store-filter" class="px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700">
+                ${stores.map(st => `<option value="${escapeHtml(st)}" ${state.storeFilter === st ? 'selected' : ''}>${st === 'All' ? 'All Stores' : escapeHtml(st)}</option>`).join('')}
+              </select>
+            </div>
+            <div class="flex gap-1.5 overflow-x-auto pb-1">
+              ${categories.map(cat => `
+                <button data-cat="${cat}" class="shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${state.category === cat ? 'bg-orange-600 text-white border-orange-600' : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'}">${cat}</button>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Product Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            ${filtered.map(p => {
+              const cheapest = getCheapestOption(p);
+              const bestPrice = effectivePrice(cheapest);
+              return `
+                <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-col justify-between gap-3 hover:border-orange-300 transition">
+                  <div>
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                      <div class="flex items-center gap-2.5">
+                        <span class="text-2xl">${escapeHtml(p.emoji)}</span>
+                        <div>
+                          <div class="flex flex-wrap items-center gap-1.5">
+                            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 text-slate-600">${escapeHtml(p.category)}</span>
+                            ${p.validUntil ? `<span class="text-[10px] font-medium text-slate-400">${escapeHtml(p.validUntil)}</span>` : ''}
+                          </div>
+                          <h3 class="font-extrabold text-slate-900 text-sm sm:text-base mt-0.5 leading-snug">${escapeHtml(p.name)}</h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="space-y-1.5 mt-3">
+                      ${p.stores.map(st => {
+                        const eff = effectivePrice(st);
+                        const isBest = eff === bestPrice;
+                        const hasDiscount = eff < st.price;
+                        return `
+                          <button data-add-item="${escapeHtml(p.id)}|${escapeHtml(st.store)}" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border text-left transition ${isBest ? 'bg-emerald-50 border-emerald-300 hover:bg-emerald-100' : 'bg-slate-50 border-slate-200 hover:bg-orange-50 hover:border-orange-300'}">
+                            <div>
+                              <span class="font-bold text-xs ${isBest ? 'text-emerald-900' : 'text-slate-800'}">${escapeHtml(st.store)}</span>
+                              ${isBest ? `<span class="ml-1.5 px-1.5 py-0.5 rounded bg-emerald-600 text-white text-[10px] font-extrabold">CHEAPEST</span>` : ''}
+                              ${hasDiscount ? `<span class="block text-[10px] text-rose-600 font-semibold">Rewards card applied (was ${zar(st.price)})</span>` : ''}
+                            </div>
+                            <div class="text-right">
+                              <span class="font-black text-sm ${isBest ? 'text-emerald-800' : 'text-slate-900'}">${zar(eff)}</span>
+                              <span class="block text-[10px] text-orange-600 font-bold">+ Add</span>
+                            </div>
+                          </button>
+                        `;
+                      }).join('')}
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+          ${!filtered.length ? `<div class="bg-white rounded-2xl p-10 text-center text-sm text-slate-500 border border-slate-200">No specials match your filter for ${escapeHtml(state.province)}.</div>` : ''}
+        </div>
+      `;
+
+      document.getElementById('sp-go-basket').addEventListener('click', () => switchTab('basket'));
+      document.getElementById('refresh-feed-btn').addEventListener('click', () => fetchLiveDeals(true));
+      document.getElementById('toggle-feed-panel-btn').addEventListener('click', () => {
+        state.showFeedPanel = !state.showFeedPanel;
+        saveState(); renderSpecials(); lucide.createIcons();
+      });
+      const feedForm = document.getElementById('feed-url-form');
+      if (feedForm) {
+        feedForm.addEventListener('submit', e => {
+          e.preventDefault();
+          state.feedUrl = document.getElementById('feed-url-input').value.trim() || './deals.json';
+          saveState();
+          fetchLiveDeals(true);
+        });
+      }
+      const importInput = document.getElementById('import-json-input');
+      if (importInput) {
+        importInput.addEventListener('change', e => {
+          const file = e.target.files && e.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = () => {
+            try {
+              const raw = JSON.parse(reader.result);
+              const normalized = normalizeFeedPayload(raw);
+              if (!normalized) { showToast('Invalid deals.json structure'); return; }
+              CATALOG = normalized.products;
+              feedMeta = { status: 'local', updatedAt: normalized.updatedAt, sourceNote: `Loaded from ${file.name}` };
+              try { localStorage.setItem(FEED_CACHE_KEY, JSON.stringify({ ...normalized, sourceNote: feedMeta.sourceNote, imported: true })); } catch (err) {}
+              renderSpecials(); lucide.createIcons();
+              showToast(`Loaded ${CATALOG.length} deals from ${file.name}!`);
+            } catch (err) {
+              showToast('Could not read JSON file');
+            }
+          };
+          reader.readAsText(file);
+        });
+      }
+      const resetBtn = document.getElementById('reset-sample-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          try { localStorage.removeItem(FEED_CACHE_KEY); } catch (e) {}
+          CATALOG = SAMPLE_CATALOG.slice();
+          feedMeta = { status: 'sample', updatedAt: null, sourceNote: 'Built-in editable sample deals' };
+          renderSpecials(); lucide.createIcons();
+          showToast('Switched back to built-in sample deals');
+        });
+      }
+
+      const si = document.getElementById('sp-search');
+      si.addEventListener('input', e => {
+        state.search = e.target.value;
+        renderSpecials();
+        lucide.createIcons();
+        const el = document.getElementById('sp-search');
+        if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); }
+      });
+      document.getElementById('sp-store-filter').addEventListener('change', e => { state.storeFilter = e.target.value; renderSpecials(); lucide.createIcons(); });
+      document.querySelectorAll('[data-cat]').forEach(btn => btn.addEventListener('click', () => { state.category = btn.dataset.cat; renderSpecials(); lucide.createIcons(); }));
+      document.querySelectorAll('[data-add-item]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const [pid, stName] = btn.dataset.addItem.split('|');
+          const prod = CATALOG.find(x => x.id === pid);
+          const opt = prod && prod.stores.find(x => x.store === stName);
+          if (prod && opt) { addToBasket(prod, opt); renderSpecials(); lucide.createIcons(); }
+        });
+      });
+    }
+
+    // =========================================================================
+    // VIEW 2: MY BASKET, BUDGET BAR & SHOPPING CHECKLIST
+    // =========================================================================
+    function renderBasket() {
+      const b = computeBasket();
+      const pct = Math.min(100, Math.round((b.finalTotal / Math.max(1, state.budgetLimit)) * 100));
+      const barColor = b.remaining < 0 ? 'bg-rose-600' : pct > 80 ? 'bg-amber-500' : 'bg-emerald-500';
+
+      const byStore = {};
+      state.basket.forEach(item => {
+        const s = item.store || 'Any Store';
+        if (!byStore[s]) byStore[s] = [];
+        byStore[s].push(item);
+      });
+
+      document.getElementById('app-main').innerHTML = `
+        <div class="space-y-5 animate-fade max-w-4xl mx-auto">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h1 class="text-2xl font-extrabold text-slate-900">My Budget &amp; Shopping Checklist</h1>
+              <p class="text-sm text-slate-500">Tick items off as you shop. Tap <strong>Auto-Optimize</strong> to switch every item to the cheapest store.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button id="opt-basket-btn" class="px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-extrabold hover:bg-emerald-700 transition">✨ Auto-Optimize Stores</button>
+              <button id="copy-list-btn" class="px-3.5 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800 transition">Copy for WhatsApp</button>
+            </div>
+          </div>
+
+          <!-- Budget Tracker Card -->
+          <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <div class="text-xs font-bold uppercase text-slate-500">Basket Total vs. Your Budget</div>
+                <div class="text-2xl font-black text-slate-900 mt-0.5">
+                  ${zar(b.finalTotal)} <span class="text-sm font-semibold text-slate-400">/ ${zar(state.budgetLimit)}</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <label class="text-xs font-bold text-slate-600">Budget (R):</label>
+                <input id="budget-limit-input" type="number" min="50" step="50" value="${state.budgetLimit}" class="w-28 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-bold" />
+              </div>
+            </div>
+            <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+              <div class="h-full ${barColor} transition-all" style="width:${pct}%"></div>
+            </div>
+            <div class="flex flex-wrap justify-between text-xs font-semibold">
+              <span class="${b.remaining < 0 ? 'text-rose-600' : 'text-emerald-700'}">
+                ${b.remaining < 0 ? `⚠️ Over budget by ${zar(Math.abs(b.remaining))}` : `✓ ${zar(b.remaining)} left in your budget`}
+              </span>
+              <span class="text-indigo-600">Rewards Cards Saving You: ${zar(b.rewardsSaved)}</span>
+            </div>
+          </div>
+
+          <!-- Quick Add Custom Item -->
+          <form id="custom-item-form" class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm grid grid-cols-12 gap-2 items-end">
+            <div class="col-span-12 sm:col-span-5">
+              <label class="block text-xs font-bold text-slate-600 mb-1">Add Custom Item (from any pamphlet)</label>
+              <input id="ci-name" required type="text" placeholder="e.g. 2kg Potatoes or Bread" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs" />
+            </div>
+            <div class="col-span-5 sm:col-span-3">
+              <label class="block text-xs font-bold text-slate-600 mb-1">Store</label>
+              <input id="ci-store" type="text" value="Shoprite" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs" />
+            </div>
+            <div class="col-span-4 sm:col-span-2">
+              <label class="block text-xs font-bold text-slate-600 mb-1">Price (R)</label>
+              <input id="ci-price" required type="number" step="0.01" min="1" placeholder="29.99" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs" />
+            </div>
+            <div class="col-span-3 sm:col-span-2">
+              <button type="submit" class="w-full py-2 rounded-xl bg-orange-600 text-white font-bold text-xs hover:bg-orange-700">+ Add</button>
+            </div>
+          </form>
+
+          <!-- Store-Grouped Checklist -->
+          ${Object.keys(byStore).length ? Object.entries(byStore).map(([storeName, items]) => {
+            const sub = items.reduce((sum, it) => sum + (((it.card && state.activeCards[it.card]) ? it.rewardPrice : it.price) * it.qty), 0);
+            return `
+              <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="px-4 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                  <span class="font-extrabold text-slate-900 text-sm">🏪 ${escapeHtml(storeName)} (${items.length} items)</span>
+                  <span class="font-extrabold text-orange-700 text-sm">${zar(sub)}</span>
+                </div>
+                <div class="divide-y divide-slate-100">
+                  ${items.map(it => {
+                    const unit = (it.card && state.activeCards[it.card]) ? it.rewardPrice : it.price;
+                    return `
+                      <div class="px-4 py-3 flex items-center justify-between gap-3">
+                        <label class="flex items-center gap-3 cursor-pointer flex-1 select-none">
+                          <input type="checkbox" data-chk-id="${it.id}" ${it.checked ? 'checked' : ''} class="w-4 h-4 rounded text-orange-600 focus:ring-orange-500" />
+                          <div>
+                            <div class="text-sm font-bold ${it.checked ? 'line-through text-slate-400' : 'text-slate-900'}">${escapeHtml(it.name)}</div>
+                            <div class="text-xs text-slate-500">${zar(unit)} each</div>
+                          </div>
+                        </label>
+                        <div class="flex items-center gap-2">
+                          <button data-dec="${it.id}" class="w-7 h-7 rounded-lg bg-slate-100 font-bold text-slate-700 hover:bg-slate-200">−</button>
+                          <span class="text-xs font-extrabold w-5 text-center">${it.qty}</span>
+                          <button data-inc="${it.id}" class="w-7 h-7 rounded-lg bg-slate-100 font-bold text-slate-700 hover:bg-slate-200">+</button>
+                          <span class="font-extrabold text-sm text-slate-900 w-20 text-right">${zar(unit * it.qty)}</span>
+                          <button data-rem="${it.id}" class="text-slate-400 hover:text-rose-600 ml-1">✕</button>
+                        </div>
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            `;
+          }).join('') : `<div class="bg-white rounded-2xl p-10 text-center text-sm text-slate-500 border border-slate-200">Your basket is empty. Add specials from the Specials tab or Voice Helper!</div>`}
+        </div>
+      `;
+
+      document.getElementById('budget-limit-input').addEventListener('change', e => {
+        state.budgetLimit = Math.max(50, Number(e.target.value) || 1200);
+        saveState(); renderBasket();
+      });
+      document.getElementById('opt-basket-btn').addEventListener('click', () => {
+        let switched = 0;
+        state.basket.forEach(item => {
+          const prod = CATALOG.find(x => (item.productId && x.id === item.productId) || x.name.toLowerCase() === item.name.toLowerCase());
+          if (!prod) return;
+          const best = getCheapestOption(prod);
+          if (best.store !== item.store || best.price !== item.price || best.rewardPrice !== item.rewardPrice) {
+            item.store = best.store;
+            item.price = best.price;
+            item.rewardPrice = best.rewardPrice;
+            item.card = best.card;
+            switched++;
+          }
+        });
+        saveState(); updateHeader(); renderBasket();
+        showToast(switched > 0 ? `Updated ${switched} item(s) to the cheapest prices!` : 'Your basket is already at the cheapest prices!');
+      });
+      document.getElementById('copy-list-btn').addEventListener('click', () => {
+        const lines = [`🛒 *Mzansi Smart Basket (${state.province})* — Total: ${zar(b.finalTotal)}`];
+        Object.entries(byStore).forEach(([st, items]) => {
+          lines.push(`\n🏪 *${st}:*`);
+          items.forEach(it => {
+            const unit = (it.card && state.activeCards[it.card]) ? it.rewardPrice : it.price;
+            lines.push(`${it.checked ? '✅' : '⬜'} ${it.qty}x ${it.name} (${zar(unit * it.qty)})`);
+          });
+        });
+        const txt = lines.join('\n');
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(txt).then(() => showToast('Shopping list copied for WhatsApp!'));
+        } else {
+          const ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); showToast('Copied for WhatsApp!'); } catch (e) {}
+          document.body.removeChild(ta);
+        }
+      });
+      document.getElementById('custom-item-form').addEventListener('submit', e => {
+        e.preventDefault();
+        const name = document.getElementById('ci-name').value.trim();
+        const store = document.getElementById('ci-store').value.trim() || 'Local Shop';
+        const price = Number(document.getElementById('ci-price').value) || 0;
+        state.basket.push({ id: 'b_' + Date.now(), productId: null, name, store, price, rewardPrice: price, card: null, qty: 1, checked: false });
+        saveState(); updateHeader(); renderBasket(); showToast(`Added ${name}`);
+      });
+      document.querySelectorAll('[data-chk-id]').forEach(c => c.addEventListener('change', e => {
+        const it = state.basket.find(x => x.id === e.target.dataset.chkId);
+        if (it) { it.checked = e.target.checked; saveState(); renderBasket(); }
+      }));
+      document.querySelectorAll('[data-inc]').forEach(btn => btn.addEventListener('click', () => {
+        const it = state.basket.find(x => x.id === btn.dataset.inc);
+        if (it) { it.qty++; saveState(); updateHeader(); renderBasket(); }
+      }));
+      document.querySelectorAll('[data-dec]').forEach(btn => btn.addEventListener('click', () => {
+        const it = state.basket.find(x => x.id === btn.dataset.dec);
+        if (it && it.qty > 1) { it.qty--; saveState(); updateHeader(); renderBasket(); }
+      }));
+      document.querySelectorAll('[data-rem]').forEach(btn => btn.addEventListener('click', () => {
+        state.basket = state.basket.filter(x => x.id !== btn.dataset.rem);
+        saveState(); updateHeader(); renderBasket();
+      }));
+    }
+
+    // =========================================================================
+    // VIEW 3: REWARDS CARDS WALLET
+    // =========================================================================
+    function renderRewards() {
+      const b = computeBasket();
+      document.getElementById('app-main').innerHTML = `
+        <div class="space-y-5 animate-fade max-w-4xl mx-auto">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h1 class="text-2xl font-extrabold text-slate-900">SA Rewards Cards Wallet</h1>
+              <p class="text-sm text-slate-500">Toggle the cards you own—member discounts apply automatically across all specials and your basket.</p>
+            </div>
+            <div class="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-extrabold">
+              Current Basket Savings: ${zar(b.rewardsSaved)}
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            ${REWARD_CARDS.map(rc => {
+              const on = !!state.activeCards[rc.id];
+              return `
+                <div class="rounded-2xl p-5 bg-gradient-to-br ${rc.color} text-white shadow-md flex flex-col justify-between gap-4 ${on ? '' : 'opacity-65'}">
+                  <div class="flex items-start justify-between gap-2">
+                    <div>
+                      <div class="text-[11px] uppercase tracking-wider text-white/80 font-bold">Loyalty Card</div>
+                      <h3 class="font-extrabold text-lg mt-0.5">${rc.name}</h3>
+                    </div>
+                    <button data-toggle-card="${rc.id}" class="px-3 py-1.5 rounded-full text-xs font-extrabold ${on ? 'bg-white text-slate-900' : 'bg-black/30 text-white border border-white/30'}">
+                      ${on ? '✓ Active' : 'Turn On'}
+                    </button>
+                  </div>
+                  <p class="text-xs text-white/90 leading-relaxed">${rc.desc}</p>
+                  <div>
+                    <label class="block text-[11px] text-white/80 font-semibold mb-1">Optional Card Number (stored only on your phone)</label>
+                    <input data-card-num="${rc.id}" type="text" value="${escapeHtml(state.cardNumbers[rc.id] || '')}" placeholder="e.g. 6001 2345 6789" class="w-full px-3 py-2 rounded-xl bg-black/25 border border-white/25 text-white placeholder-white/50 text-xs font-mono" />
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+
+      document.querySelectorAll('[data-toggle-card]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.toggleCard;
+          state.activeCards[id] = !state.activeCards[id];
+          saveState(); updateHeader(); renderRewards();
+          showToast(state.activeCards[id] ? 'Rewards card activated — prices updated!' : 'Rewards card turned off');
+        });
+      });
+      document.querySelectorAll('[data-card-num]').forEach(inp => {
+        inp.addEventListener('change', e => {
+          state.cardNumbers[e.target.dataset.cardNum] = e.target.value.trim();
+          saveState(); showToast('Card number saved privately on phone');
+        });
+      });
+    }
+
+    // =========================================================================
+    // VIEW 4: VOICE TALK & SMART BUDGET HELPER
+    // =========================================================================
+    let isListening = false;
+    function runSmartQuery(rawQuery) {
+      const q = (rawQuery || '').trim().toLowerCase();
+      if (!q) return;
+
+      const available = CATALOG.filter(matchesProvince);
+      const budgetMatch = q.match(/r?\s*(\d{2,5})/);
+      if (q.includes('build') || q.includes('plan') || (q.includes('basket') && budgetMatch)) {
+        const cap = budgetMatch ? Number(budgetMatch[1]) : state.budgetLimit;
+        state.budgetLimit = cap;
+        const pool = available.filter(p => q.includes('snack') ? p.category === 'Snacks & Drinks' : q.includes('cloth') ? p.category === 'Clothing' : p.category !== 'Clothing');
+        state.basket = [];
+        let spent = 0;
+        pool.forEach(p => {
+          const best = getCheapestOption(p);
+          const cost = effectivePrice(best);
+          if (spent + cost <= cap) {
+            state.basket.push({ id: 'b_' + p.id + Date.now(), productId: p.id, name: p.name, store: best.store, price: best.price, rewardPrice: best.rewardPrice, card: best.card, qty: 1, checked: false });
+            spent += cost;
+          }
+        });
+        state.assistantReply = `Done! I built a smart ${zar(spent)} basket (${state.basket.length} cheapest items) inside your ${zar(cap)} budget using your active Rewards Cards. Open "My Basket & Budget" to check it off!`;
+        saveState(); updateHeader(); speakBack(state.assistantReply); renderAssistant(); lucide.createIcons();
+        return;
+      }
+
+      const matched = available.filter(p => q.split(/\s+/).some(w => w.length >= 3 && (p.name.toLowerCase().includes(w) || p.category.toLowerCase().includes(w))));
+      if (matched.length) {
+        if (q.includes('add')) {
+          matched.slice(0, 2).forEach(p => addToBasket(p, getCheapestOption(p)));
+          state.assistantReply = `Added ${matched.slice(0, 2).map(p => `${p.name} (${getCheapestOption(p).store} ${zar(effectivePrice(getCheapestOption(p)))})`).join(' and ')} to your basket!`;
+        } else {
+          state.assistantReply = matched.slice(0, 4).map(p => {
+            const best = getCheapestOption(p);
+            return `• ${p.name}: Cheapest at ${best.store} for ${zar(effectivePrice(best))}`;
+          }).join('\n');
+        }
+        saveState(); updateHeader(); speakBack(state.assistantReply); renderAssistant(); lucide.createIcons();
+        return;
+      }
+
+      state.assistantReply = `I searched for "${rawQuery}". Try saying "Build a R600 staple basket", "Add chicken", "Cheapest oil", or "Snacks".`;
+      renderAssistant(); lucide.createIcons();
+    }
+
+    function speakBack(text) {
+      try {
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(text.replace(/•/g, ''));
+          u.rate = 1.0;
+          window.speechSynthesis.speak(u);
+        }
+      } catch (e) {}
+    }
+
+    function renderAssistant() {
+      const hasVoice = ('SpeechRecognition' in window) || ('webkitSpeechRecognition' in window);
+      document.getElementById('app-main').innerHTML = `
+        <div class="space-y-5 animate-fade max-w-3xl mx-auto">
+          <div class="text-center">
+            <h1 class="text-2xl font-extrabold text-slate-900">🎙️ Voice Talk &amp; Smart Budget Helper</h1>
+            <p class="text-sm text-slate-500 mt-1">Speak hands-free while checking your kitchen cupboards, or tap a quick prompt below.</p>
+          </div>
+
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm text-center space-y-5">
+            <button id="voice-mic-btn" class="w-20 h-20 mx-auto rounded-full ${isListening ? 'bg-rose-600 mic-live' : 'bg-orange-600 hover:bg-orange-700'} text-white flex items-center justify-center shadow-lg transition">
+              <i data-lucide="mic" class="w-9 h-9"></i>
+            </button>
+            <div class="text-xs font-bold ${isListening ? 'text-rose-600' : 'text-slate-500'}">
+              ${isListening ? 'Listening... speak now!' : hasVoice ? 'Tap the mic and speak (e.g. "Build a R600 staple basket")' : 'Type your request below (voice mic works best in Chrome on Android)'}
+            </div>
+
+            <form id="smart-query-form" class="flex gap-2">
+              <input id="smart-query-input" type="text" placeholder="Ask: Build a R800 staple basket, Cheapest rice, Add milk..." class="flex-1 px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400" />
+              <button type="submit" class="px-5 py-3 rounded-xl bg-slate-900 text-white font-bold text-sm hover:bg-slate-800">Ask</button>
+            </form>
+
+            <div class="flex flex-wrap justify-center gap-2">
+              <button data-qprompt="Build a R650 staple basket" class="px-3 py-1.5 rounded-full bg-orange-50 text-orange-800 border border-orange-200 text-xs font-bold hover:bg-orange-100">Build a R650 staple basket</button>
+              <button data-qprompt="Cheapest chicken" class="px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold hover:bg-emerald-100">Cheapest chicken</button>
+              <button data-qprompt="Add maize meal" class="px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-800 border border-indigo-200 text-xs font-bold hover:bg-indigo-100">Add maize meal</button>
+              <button data-qprompt="Kids clothing deals" class="px-3 py-1.5 rounded-full bg-rose-50 text-rose-800 border border-rose-200 text-xs font-bold hover:bg-rose-100">Kids clothing deals</button>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-left text-sm text-slate-800 whitespace-pre-line leading-relaxed">
+              <div class="text-[11px] font-bold uppercase text-orange-600 mb-1">Smart Basket Reply</div>
+              ${escapeHtml(state.assistantReply)}
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('smart-query-form').addEventListener('submit', e => {
+        e.preventDefault();
+        runSmartQuery(document.getElementById('smart-query-input').value);
+      });
+      document.querySelectorAll('[data-qprompt]').forEach(b => b.addEventListener('click', () => runSmartQuery(b.dataset.qprompt)));
+      document.getElementById('voice-mic-btn').addEventListener('click', () => {
+        const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SR) { showToast('Voice mic requires Chrome on Android/Desktop — type below instead!'); return; }
+        try {
+          const rec = new SR();
+          rec.lang = 'en-ZA';
+          rec.interimResults = false;
+          isListening = true;
+          renderAssistant(); lucide.createIcons();
+          rec.onresult = (ev) => {
+            isListening = false;
+            const spoken = ev.results[0][0].transcript;
+            showToast('Heard: ' + spoken);
+            runSmartQuery(spoken);
+          };
+          rec.onerror = () => { isListening = false; renderAssistant(); lucide.createIcons(); showToast('Could not hear clearly — try again'); };
+          rec.onend = () => { if (isListening) { isListening = false; renderAssistant(); lucide.createIcons(); } };
+          rec.start();
+        } catch (e) { isListening = false; showToast('Mic blocked by browser settings'); }
+      });
+    }
+
+    // --- Navigation ---
+    function switchTab(tab) {
+      state.activeTab = tab;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+      document.getElementById('mobile-nav').classList.add('hidden');
+      if (tab === 'specials') renderSpecials();
+      else if (tab === 'basket') renderBasket();
+      else if (tab === 'rewards') renderRewards();
+      else if (tab === 'assistant') renderAssistant();
+      lucide.createIcons();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
+    document.getElementById('hdr-basket-btn').addEventListener('click', () => switchTab('basket'));
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-nav').classList.toggle('hidden'));
+    document.getElementById('province-select').addEventListener('change', e => {
+      state.province = e.target.value;
+      saveState();
+      switchTab(state.activeTab);
+      showToast(`Location set to ${state.province}`);
+    });
+
+    // Startup: load cached feed immediately, then try live deals.json in background
+    loadCachedFeed();
+    updateHeader();
+    switchTab('specials');
+    fetchLiveDeals(false);
+  </script>
+</body>
+</html>

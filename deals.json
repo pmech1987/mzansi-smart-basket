@@ -1,0 +1,210 @@
+{
+  "updatedAt": "2026-11-25T05:00:00+02:00",
+  "sourceNote": "Starter weekly feed (auto-updated by GitHub Actions + Gemini OCR)",
+  "products": [
+    {
+      "id": "10kg_white_maize_meal",
+      "name": "10kg White Maize Meal",
+      "category": "Staples",
+      "emoji": "🌽",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "2026-12-01",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 109.99,
+          "rewardPrice": 104.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 114.99,
+          "rewardPrice": 106.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 119.99,
+          "rewardPrice": 112.99,
+          "card": "smart"
+        },
+        {
+          "store": "SPAR",
+          "price": 122.99,
+          "rewardPrice": 115.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "2l_sunflower_cooking_oil",
+      "name": "2L Sunflower Cooking Oil",
+      "category": "Staples",
+      "emoji": "🌻",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "2026-12-01",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 69.99,
+          "rewardPrice": 64.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 68.99,
+          "rewardPrice": 65.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Checkers",
+          "price": 74.99,
+          "rewardPrice": 66.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 76.99,
+          "rewardPrice": 69.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "10kg_parboiled_rice",
+      "name": "10kg Parboiled Rice",
+      "category": "Staples",
+      "emoji": "🍚",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "2026-12-01",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 169.99,
+          "rewardPrice": 164.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 179.99,
+          "rewardPrice": 169.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 184.99,
+          "rewardPrice": 174.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "5kg_iqf_mixed_chicken_portions",
+      "name": "5kg IQF Mixed Chicken Portions",
+      "category": "Food & Meat",
+      "emoji": "🍗",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "2026-12-01",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 199.99,
+          "rewardPrice": 189.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 214.99,
+          "rewardPrice": 194.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 219.99,
+          "rewardPrice": 199.99,
+          "card": "smart"
+        },
+        {
+          "store": "Checkers",
+          "price": 224.99,
+          "rewardPrice": 199.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "6x1l_full_cream_long_life_milk",
+      "name": "6 x 1L Full Cream Long-Life Milk",
+      "category": "Food & Meat",
+      "emoji": "🥛",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "2026-12-01",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 98.99,
+          "rewardPrice": 89.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 99.99,
+          "rewardPrice": 89.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 96.99,
+          "rewardPrice": 92.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 104.99,
+          "rewardPrice": 94.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "18_roll_2ply_toilet_paper",
+      "name": "18-Roll 2-Ply Toilet Paper",
+      "category": "Household",
+      "emoji": "🧻",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "2026-12-01",
+      "stores": [
+        {
+          "store": "Checkers",
+          "price": 119.99,
+          "rewardPrice": 99.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 124.99,
+          "rewardPrice": 104.99,
+          "card": "smart"
+        },
+        {
+          "store": "Boxer",
+          "price": 109.99,
+          "rewardPrice": 104.99,
+          "card": "boxer"
+        }
+      ]
+    }
+  ]
+}

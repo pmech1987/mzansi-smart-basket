@@ -63,6 +63,7 @@
 
       <!-- GPS + Province + Basket Pill -->
       <div class="flex items-center gap-1.5 shrink-0">
+        <button id="install-pwa-btn" class="hidden px-2.5 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-extrabold hover:bg-emerald-700 transition shadow-sm">📲 Install</button>
         <button id="gps-btn" title="Detect my SA province using GPS" class="p-1.5 rounded-lg bg-orange-50 text-orange-700 border border-orange-200 hover:bg-orange-100 transition" aria-label="Detect GPS location">
           <i data-lucide="locate-fixed" class="w-4 h-4"></i>
         </button>
@@ -152,6 +153,9 @@
       autoSync: true,
       showFeedPanel: false,
       showAddDealForm: false,
+      showUnitCalc: false,
+      onlyFavs: false,
+      favorites: [],
       activeCards: { xtra: true, smart: true, boxer: true, spar: false },
       cardNumbers: { xtra: '', smart: '', boxer: '', spar: '' },
       customCatalog: [],
@@ -209,6 +213,9 @@
           pamphletTitle: String(item.pamphletTitle || 'Weekly Pamphlet'),
           dealType: String(item.dealType || 'Weekly Special'),
           provinces: Array.isArray(item.provinces) && item.provinces.length ? item.provinces : ['All'],
+          brand: item.brand ? String(item.brand) : '',
+          multiBuy: item.multiBuy ? String(item.multiBuy) : '',
+          unitPrice: item.unitPrice ? String(item.unitPrice) : '',
           validUntil: item.validUntil ? String(item.validUntil) : '',
           stores: item.stores.map(st => ({
             store: String(st.store || 'Store'),
@@ -462,6 +469,8 @@
               </button>
             </div>
             <div class="flex flex-wrap items-center gap-1.5">
+              <button id="toggle-favs-btn" class="px-2.5 py-1.5 rounded-xl text-xs font-bold border ${state.onlyFavs ? 'bg-amber-400 text-slate-950 border-amber-500' : 'bg-amber-50 text-amber-800 border-amber-200'}">⭐ Regulars (${(state.favorites || []).length})</button>
+              <button id="toggle-unitcalc-btn" class="px-2.5 py-1.5 rounded-xl bg-indigo-50 text-indigo-800 border border-indigo-200 text-xs font-bold hover:bg-indigo-100">⚖️ Value Check</button>
               <button id="open-add-deal-btn" class="px-3 py-1.5 rounded-xl bg-orange-600 text-white text-xs font-bold hover:bg-orange-700">+ Add Item</button>
               <button id="refresh-feed-btn" class="px-2.5 py-1.5 rounded-xl bg-orange-50 text-orange-700 border border-orange-200 text-xs font-bold hover:bg-orange-100 flex items-center gap-1">
                 <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Sync
@@ -527,6 +536,41 @@
         };
         reader.readAsText(file);
       });
+      const favsBtn = document.getElementById('toggle-favs-btn');
+      if (favsBtn) favsBtn.addEventListener('click', () => { state.onlyFavs = !state.onlyFavs; saveState(); renderCurrentTab(); });
+      const ucBtn = document.getElementById('toggle-unitcalc-btn');
+      if (ucBtn) ucBtn.addEventListener('click', () => { state.showUnitCalc = !state.showUnitCalc; renderCurrentTab(); });
+      const closeUc = document.getElementById('close-unitcalc-btn');
+      if (closeUc) closeUc.addEventListener('click', () => { state.showUnitCalc = false; renderCurrentTab(); });
+      const ucInputs = ['uc-price-a', 'uc-size-a', 'uc-price-b', 'uc-size-b'].map(id => document.getElementById(id)).filter(Boolean);
+      if (ucInputs.length === 4) {
+        const updateUc = () => {
+          const pa = Number(ucInputs[0].value), sa = Number(ucInputs[1].value);
+          const pb = Number(ucInputs[2].value), sb = Number(ucInputs[3].value);
+          const res = document.getElementById('uc-result');
+          if (pa > 0 && sa > 0 && pb > 0 && sb > 0) {
+            const ua = pa / sa, ub = pb / sb;
+            const winner = ua < ub ? `Option A wins (${zar(ua)}/unit vs ${zar(ub)}/unit — ${Math.round((1 - ua/ub)*100)}% cheaper!)`
+              : ub < ua ? `Option B wins (${zar(ub)}/unit vs ${zar(ua)}/unit — ${Math.round((1 - ub/ua)*100)}% cheaper!)`
+              : `Exact same value (${zar(ua)}/unit each)!`;
+            res.textContent = '✓ ' + winner;
+          }
+        };
+        ucInputs.forEach(i => i.addEventListener('input', updateUc));
+      }
+      document.querySelectorAll('[data-fav-toggle]').forEach(btn => btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const pid = btn.dataset.favToggle;
+        state.favorites = state.favorites || [];
+        if (state.favorites.includes(pid)) {
+          state.favorites = state.favorites.filter(x => x !== pid);
+          showToast('Removed from Regulars');
+        } else {
+          state.favorites.push(pid);
+          showToast('Pinned to ⭐ Regulars!');
+        }
+        saveState(); renderCurrentTab();
+      }));
       const resetBtn = document.getElementById('reset-sample-btn');
       if (resetBtn) resetBtn.addEventListener('click', () => {
         try { localStorage.removeItem(FEED_CACHE_KEY); } catch (e) {}
@@ -599,6 +643,7 @@
       const catalog = getAllCatalog().filter(matchesProvince);
       const q = (state.search || '').trim().toLowerCase();
       let list = catalog.filter(p => {
+        if (state.onlyFavs && !(state.favorites || []).includes(p.id)) return false;
         if (state.category !== 'All' && p.category !== state.category) return false;
         if (state.dealTypeFilter !== 'All' && p.dealType !== state.dealTypeFilter) return false;
         if (applyStoreFilter && state.storeFilter !== 'All' && !p.stores.some(st => st.store === state.storeFilter)) return false;
@@ -692,6 +737,31 @@
 
           ${renderFeedStatusBar()}
           ${state.showAddDealForm ? renderInlineAddDealForm() : ''}
+          ${state.showUnitCalc ? `
+            <div class="bg-indigo-50 rounded-2xl p-4 border border-indigo-200 space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="text-xs font-extrabold text-indigo-950">⚖️ In-Store Value Checker (Compare 2 Pack Sizes or Multi-Buys)</div>
+                <button id="close-unitcalc-btn" class="text-xs font-bold text-indigo-700 hover:underline">Close</button>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div class="bg-white rounded-xl p-3 border border-indigo-100 space-y-2">
+                  <div class="font-extrabold text-slate-800">Option A (e.g. 5kg or Single)</div>
+                  <div class="flex gap-2">
+                    <input id="uc-price-a" type="number" step="0.01" placeholder="Price (R) e.g. 59.99" class="flex-1 px-2.5 py-1.5 rounded-lg bg-slate-50 border border-slate-200" />
+                    <input id="uc-size-a" type="number" step="0.01" placeholder="Size/Qty e.g. 5" class="w-28 px-2.5 py-1.5 rounded-lg bg-slate-50 border border-slate-200" />
+                  </div>
+                </div>
+                <div class="bg-white rounded-xl p-3 border border-indigo-100 space-y-2">
+                  <div class="font-extrabold text-slate-800">Option B (e.g. 10kg or 2-Pack)</div>
+                  <div class="flex gap-2">
+                    <input id="uc-price-b" type="number" step="0.01" placeholder="Price (R) e.g. 104.99" class="flex-1 px-2.5 py-1.5 rounded-lg bg-slate-50 border border-slate-200" />
+                    <input id="uc-size-b" type="number" step="0.01" placeholder="Size/Qty e.g. 10" class="w-28 px-2.5 py-1.5 rounded-lg bg-slate-50 border border-slate-200" />
+                  </div>
+                </div>
+              </div>
+              <div id="uc-result" class="text-xs font-extrabold text-indigo-900 bg-white/80 rounded-xl px-3 py-2 border border-indigo-100">Enter both prices and sizes (e.g. kg, L, rolls, or pack count) to see the real winner per unit.</div>
+            </div>
+          ` : ''}
 
           <!-- Sidebar + Main Picker Layout -->
           <div class="flex gap-5 items-start">
@@ -736,6 +806,7 @@
                             <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">${escapeHtml(p.dealType)}</span>
                             ${regional ? `<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-orange-100 text-orange-800">📍 ${escapeHtml(state.province)}</span>` : ''}
                             ${spread >= 10 ? `<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">Save up to ${zar(spread)}</span>` : ''}
+                            ${p.multiBuy ? `<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800">${escapeHtml(p.multiBuy)}</span>` : ''}
                           </div>
                           <div class="font-extrabold text-slate-900 text-sm leading-snug mt-0.5">${escapeHtml(p.name)}</div>
                           <div class="text-[11px] text-slate-500 mt-0.5">
@@ -750,7 +821,10 @@
                           <button data-qp-inc="${escapeHtml(p.id)}" class="w-7 h-7 rounded-lg bg-orange-600 font-bold text-white">+</button>
                         </div>
                       ` : `
-                        <button data-qp-toggle="${escapeHtml(p.id)}" class="px-2.5 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold hover:bg-orange-100 hover:text-orange-700 shrink-0">+ Pick</button>
+                        <div class="flex items-center gap-1 shrink-0">
+                          <button data-fav-toggle="${escapeHtml(p.id)}" title="Save to My Regulars" class="w-7 h-7 rounded-lg border text-xs ${(state.favorites || []).includes(p.id) ? 'bg-amber-100 border-amber-400 text-amber-700' : 'bg-slate-50 border-slate-200 text-slate-400'}">★</button>
+                          <button data-qp-toggle="${escapeHtml(p.id)}" class="px-2.5 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold hover:bg-orange-100 hover:text-orange-700">+ Pick</button>
+                        </div>
                       `}
                     </div>
                   `;
@@ -1316,6 +1390,33 @@
         fetchLiveDeals(false);
       }
     }, 60000);
+
+    // Capture Chrome Android's native Install prompt for 1-tap in-app installation
+    let deferredInstallPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      const btn = document.getElementById('install-pwa-btn');
+      if (btn) btn.classList.remove('hidden');
+    });
+    const installBtn = document.getElementById('install-pwa-btn');
+    if (installBtn) {
+      installBtn.addEventListener('click', async () => {
+        if (!deferredInstallPrompt) return;
+        deferredInstallPrompt.prompt();
+        const choice = await deferredInstallPrompt.userChoice;
+        if (choice && choice.outcome === 'accepted') {
+          showToast('Installing Mzansi Smart Basket to your home screen!');
+          installBtn.classList.add('hidden');
+        }
+        deferredInstallPrompt = null;
+      });
+    }
+    window.addEventListener('appinstalled', () => {
+      const btn = document.getElementById('install-pwa-btn');
+      if (btn) btn.classList.add('hidden');
+      showToast('Mzansi Smart Basket installed!');
+    });
 
     // Register PWA Service Worker
     if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {

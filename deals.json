@@ -1,16 +1,18 @@
 {
-  "updatedAt": "2026-11-25T05:00:00+02:00",
-  "sourceNote": "Starter weekly feed (auto-updated by GitHub Actions + Gemini OCR)",
+  "updatedAt": "2026-11-25T12:28:00+02:00",
+  "sourceNote": "75-item multi-department SA catalogue (upload store PDFs to pamphlets/ on GitHub to extract unlimited live specials)",
   "products": [
     {
-      "id": "10kg_white_maize_meal",
-      "name": "10kg White Maize Meal",
-      "category": "Staples",
+      "id": "maize_10kg",
+      "name": "10kg White Super Maize Meal",
+      "category": "Staples & Grain",
       "emoji": "🌽",
+      "pamphletTitle": "Shoprite & Boxer Monthly Staples",
+      "dealType": "Monthly Combo",
       "provinces": [
         "All"
       ],
-      "validUntil": "2026-12-01",
+      "validUntil": "Weekly Pamphlet",
       "stores": [
         {
           "store": "Boxer",
@@ -39,14 +41,16 @@
       ]
     },
     {
-      "id": "2l_sunflower_cooking_oil",
+      "id": "oil_2l",
       "name": "2L Sunflower Cooking Oil",
-      "category": "Staples",
+      "category": "Staples & Grain",
       "emoji": "🌻",
+      "pamphletTitle": "Payday Essentials Leaflet",
+      "dealType": "Payday Deal",
       "provinces": [
         "All"
       ],
-      "validUntil": "2026-12-01",
+      "validUntil": "Weekly Pamphlet",
       "stores": [
         {
           "store": "Shoprite",
@@ -75,14 +79,16 @@
       ]
     },
     {
-      "id": "10kg_parboiled_rice",
-      "name": "10kg Parboiled Rice",
-      "category": "Staples",
+      "id": "rice_10kg",
+      "name": "10kg Parboiled Long Grain Rice",
+      "category": "Staples & Grain",
       "emoji": "🍚",
+      "pamphletTitle": "Monthly Bulk Combo",
+      "dealType": "Monthly Combo",
       "provinces": [
         "All"
       ],
-      "validUntil": "2026-12-01",
+      "validUntil": "Weekly Pamphlet",
       "stores": [
         {
           "store": "Boxer",
@@ -105,14 +111,180 @@
       ]
     },
     {
-      "id": "5kg_iqf_mixed_chicken_portions",
-      "name": "5kg IQF Mixed Chicken Portions",
-      "category": "Food & Meat",
-      "emoji": "🍗",
+      "id": "flour_10kg",
+      "name": "10kg Cake Wheat Flour",
+      "category": "Staples & Grain",
+      "emoji": "🌾",
+      "pamphletTitle": "Baking & Bulk Pamphlet",
+      "dealType": "Monthly Combo",
       "provinces": [
         "All"
       ],
-      "validUntil": "2026-12-01",
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 134.99,
+          "rewardPrice": 129.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 139.99,
+          "rewardPrice": 131.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 144.99,
+          "rewardPrice": 136.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "sugar_2_5kg",
+      "name": "2.5kg Brown Sugar",
+      "category": "Staples & Grain",
+      "emoji": "🧂",
+      "pamphletTitle": "Weekly Grocery Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 54.99,
+          "rewardPrice": 49.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 52.99,
+          "rewardPrice": 49.99,
+          "card": "boxer"
+        },
+        {
+          "store": "SPAR",
+          "price": 57.99,
+          "rewardPrice": 52.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "samp_2_5kg",
+      "name": "2.5kg White Samp",
+      "category": "Staples & Grain",
+      "emoji": "🥣",
+      "pamphletTitle": "Inland Staples Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "Gauteng",
+        "Mpumalanga",
+        "Limpopo",
+        "North West",
+        "Free State"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 32.99,
+          "rewardPrice": 29.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 34.99,
+          "rewardPrice": 31.99,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 36.99,
+          "rewardPrice": 33.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "oats_1kg",
+      "name": "1kg Jungle Rolled Oats",
+      "category": "Staples & Grain",
+      "emoji": "🥣",
+      "pamphletTitle": "Breakfast Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Checkers",
+          "price": 44.99,
+          "rewardPrice": 36.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Shoprite",
+          "price": 42.99,
+          "rewardPrice": 36.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 45.99,
+          "rewardPrice": 39.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "maize_5kg",
+      "name": "5kg White Maize Meal",
+      "category": "Staples & Grain",
+      "emoji": "🌽",
+      "pamphletTitle": "3-Day Flash Sale",
+      "dealType": "3-Day Flash",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 59.99,
+          "rewardPrice": 52.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 56.99,
+          "rewardPrice": 51.99,
+          "card": "boxer"
+        },
+        {
+          "store": "SPAR",
+          "price": 61.99,
+          "rewardPrice": 55.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "chicken_5kg",
+      "name": "5kg IQF Mixed Chicken Portions",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🍗",
+      "pamphletTitle": "Butchery & Freezer Deals",
+      "dealType": "Payday Deal",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
       "stores": [
         {
           "store": "Boxer",
@@ -141,14 +313,352 @@
       ]
     },
     {
-      "id": "6x1l_full_cream_long_life_milk",
-      "name": "6 x 1L Full Cream Long-Life Milk",
-      "category": "Food & Meat",
-      "emoji": "🥛",
+      "id": "russians_1kg",
+      "name": "1kg Smoked Cheese / Original Russians",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🌭",
+      "pamphletTitle": "Deli & Butchery Flyer",
+      "dealType": "Weekly Special",
       "provinces": [
         "All"
       ],
-      "validUntil": "2026-12-01",
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 64.99,
+          "rewardPrice": 59.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 69.99,
+          "rewardPrice": 61.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 74.99,
+          "rewardPrice": 66.99,
+          "card": "smart"
+        },
+        {
+          "store": "SPAR",
+          "price": 72.99,
+          "rewardPrice": 65.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "viennas_1kg",
+      "name": "1kg Red / Smoked Viennas Value Pack",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🌭",
+      "pamphletTitle": "Lunchbox & Deli Deals",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 59.99,
+          "rewardPrice": 54.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 64.99,
+          "rewardPrice": 56.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 69.99,
+          "rewardPrice": 59.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "pies_deli_2pk",
+      "name": "Fresh Deli Pepper Steak / Chicken Pies (2-Pack)",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🥧",
+      "pamphletTitle": "Hot Deli & Bakery Deals",
+      "dealType": "3-Day Flash",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 36.0,
+          "rewardPrice": 30.0,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 38.0,
+          "rewardPrice": 32.0,
+          "card": "spar"
+        },
+        {
+          "store": "Checkers",
+          "price": 42.0,
+          "rewardPrice": 35.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 40.0,
+          "rewardPrice": 34.0,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "frozen_pies_4pk",
+      "name": "4-Pack Frozen Family Meat Pies",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🥧",
+      "pamphletTitle": "Freezer Combos",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Checkers",
+          "price": 79.99,
+          "rewardPrice": 64.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Shoprite",
+          "price": 74.99,
+          "rewardPrice": 62.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 69.99,
+          "rewardPrice": 61.99,
+          "card": "boxer"
+        }
+      ]
+    },
+    {
+      "id": "boerewors_1kg",
+      "name": "1kg Traditional Braai Boerewors",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🥩",
+      "pamphletTitle": "Weekend Braai Pamphlet",
+      "dealType": "3-Day Flash",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 99.99,
+          "rewardPrice": 94.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 104.99,
+          "rewardPrice": 96.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 109.99,
+          "rewardPrice": 99.99,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 114.99,
+          "rewardPrice": 104.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "beef_chuck_1kg",
+      "name": "1kg Beef Chuck / Blade Steak",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🥩",
+      "pamphletTitle": "Mpumalanga & Inland Butchery",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "Gauteng",
+        "Mpumalanga",
+        "Limpopo",
+        "North West",
+        "Free State"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 109.99,
+          "rewardPrice": 104.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Checkers",
+          "price": 119.99,
+          "rewardPrice": 109.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 124.99,
+          "rewardPrice": 114.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "beef_mince_1kg",
+      "name": "1kg Lean Beef Mince",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🥩",
+      "pamphletTitle": "Butchery Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 109.99,
+          "rewardPrice": 99.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 104.99,
+          "rewardPrice": 98.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Checkers",
+          "price": 119.99,
+          "rewardPrice": 104.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "polony_1kg",
+      "name": "1kg French Polony Loaf",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🥪",
+      "pamphletTitle": "Deli Everyday Low Prices",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 34.99,
+          "rewardPrice": 31.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 36.99,
+          "rewardPrice": 32.99,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 39.99,
+          "rewardPrice": 35.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "pork_pack_1kg",
+      "name": "1kg Bulk Pork Braai Chops",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🥓",
+      "pamphletTitle": "Weekend Braai Pamphlet",
+      "dealType": "3-Day Flash",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 79.99,
+          "rewardPrice": 74.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 84.99,
+          "rewardPrice": 76.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 89.99,
+          "rewardPrice": 79.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "chicken_livers_1kg",
+      "name": "1kg Frozen Chicken Livers / Gizzards",
+      "category": "Meat, Poultry & Deli",
+      "emoji": "🍗",
+      "pamphletTitle": "Boxer Butchery Special",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 39.99,
+          "rewardPrice": 36.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 42.99,
+          "rewardPrice": 38.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "milk_6x1l",
+      "name": "6 x 1L Full Cream Long-Life Milk",
+      "category": "Dairy & Eggs",
+      "emoji": "🥛",
+      "pamphletTitle": "Dairy & Fridge Deals",
+      "dealType": "Payday Deal",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
       "stores": [
         {
           "store": "Shoprite",
@@ -177,14 +687,1006 @@
       ]
     },
     {
-      "id": "18_roll_2ply_toilet_paper",
-      "name": "18-Roll 2-Ply Toilet Paper",
-      "category": "Household",
-      "emoji": "🧻",
+      "id": "eggs_30",
+      "name": "30 Large Farm Eggs Tray",
+      "category": "Dairy & Eggs",
+      "emoji": "🥚",
+      "pamphletTitle": "Weekly Grocery Specials",
+      "dealType": "Weekly Special",
       "provinces": [
         "All"
       ],
-      "validUntil": "2026-12-01",
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 69.99,
+          "rewardPrice": 66.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 72.99,
+          "rewardPrice": 67.99,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 74.99,
+          "rewardPrice": 69.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "cheddar_800g",
+      "name": "800g Cheddar / Gouda Cheese Block",
+      "category": "Dairy & Eggs",
+      "emoji": "🧀",
+      "pamphletTitle": "Checkers & PnP Fridge Deals",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Checkers",
+          "price": 119.99,
+          "rewardPrice": 99.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Shoprite",
+          "price": 114.99,
+          "rewardPrice": 99.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 124.99,
+          "rewardPrice": 104.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "margarine_500g",
+      "name": "500g Brick Margarine",
+      "category": "Dairy & Eggs",
+      "emoji": "🧈",
+      "pamphletTitle": "Baking & Fridge Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 23.99,
+          "rewardPrice": 21.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 24.99,
+          "rewardPrice": 21.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 26.99,
+          "rewardPrice": 23.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "maas_2l",
+      "name": "2L Full Cream Amasi / Maas",
+      "category": "Dairy & Eggs",
+      "emoji": "🥛",
+      "pamphletTitle": "Everyday Dairy Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 29.99,
+          "rewardPrice": 27.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 31.99,
+          "rewardPrice": 28.99,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 33.99,
+          "rewardPrice": 29.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "yoghurt_6pk",
+      "name": "6 x 100g Assorted Fruit Yoghurt",
+      "category": "Dairy & Eggs",
+      "emoji": "🍨",
+      "pamphletTitle": "Lunchbox Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 24.99,
+          "rewardPrice": 19.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 26.99,
+          "rewardPrice": 21.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 25.99,
+          "rewardPrice": 21.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "bread_brown",
+      "name": "700g Brown Bread Loaf (2-Pack Combo)",
+      "category": "Bakery & Bread",
+      "emoji": "🍞",
+      "pamphletTitle": "In-Store Bakery Specials",
+      "dealType": "3-Day Flash",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 31.0,
+          "rewardPrice": 29.0,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 32.0,
+          "rewardPrice": 30.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 34.0,
+          "rewardPrice": 31.0,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "bread_white",
+      "name": "700g Superior White Bread Loaf",
+      "category": "Bakery & Bread",
+      "emoji": "🍞",
+      "pamphletTitle": "Daily Bakery Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 17.99,
+          "rewardPrice": 16.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 18.99,
+          "rewardPrice": 17.49,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 19.99,
+          "rewardPrice": 18.49,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "hotdog_rolls_6pk",
+      "name": "6-Pack Fresh Hotdog / Burger Rolls",
+      "category": "Bakery & Bread",
+      "emoji": "🥖",
+      "pamphletTitle": "Weekend Braai Pamphlet",
+      "dealType": "3-Day Flash",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 16.99,
+          "rewardPrice": 14.99,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 18.99,
+          "rewardPrice": 15.99,
+          "card": "spar"
+        },
+        {
+          "store": "Checkers",
+          "price": 19.99,
+          "rewardPrice": 16.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "muffins_6pk",
+      "name": "6-Pack Freshly Baked Jumbo Muffins",
+      "category": "Bakery & Bread",
+      "emoji": "🧁",
+      "pamphletTitle": "In-Store Bakery Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Checkers",
+          "price": 39.99,
+          "rewardPrice": 32.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 42.99,
+          "rewardPrice": 34.99,
+          "card": "smart"
+        },
+        {
+          "store": "SPAR",
+          "price": 38.99,
+          "rewardPrice": 32.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "potatoes_7kg",
+      "name": "7kg Washed Potatoes Bag",
+      "category": "Fruit & Veg",
+      "emoji": "🥔",
+      "pamphletTitle": "Fresh Produce Market Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 69.99,
+          "rewardPrice": 64.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 74.99,
+          "rewardPrice": 69.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 79.99,
+          "rewardPrice": 72.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "onions_7kg",
+      "name": "7kg Brown Onions Pocket",
+      "category": "Fruit & Veg",
+      "emoji": "🧅",
+      "pamphletTitle": "Fresh Produce Market Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 59.99,
+          "rewardPrice": 54.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 64.99,
+          "rewardPrice": 59.99,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 69.99,
+          "rewardPrice": 62.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "tomatoes_2kg",
+      "name": "2kg Fresh Tomatoes Thriftpack",
+      "category": "Fruit & Veg",
+      "emoji": "🍅",
+      "pamphletTitle": "Fresh Produce Market Flyer",
+      "dealType": "3-Day Flash",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 32.99,
+          "rewardPrice": 29.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 34.99,
+          "rewardPrice": 29.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 39.99,
+          "rewardPrice": 32.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "apples_1_5kg",
+      "name": "1.5kg Red / Golden Apples Bag",
+      "category": "Fruit & Veg",
+      "emoji": "🍎",
+      "pamphletTitle": "Fresh Produce Market Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 31.99,
+          "rewardPrice": 26.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 32.99,
+          "rewardPrice": 27.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 34.99,
+          "rewardPrice": 29.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "bananas_1kg",
+      "name": "1kg Fresh Bananas",
+      "category": "Fruit & Veg",
+      "emoji": "🍌",
+      "pamphletTitle": "Mpumalanga Fresh Market",
+      "dealType": "3-Day Flash",
+      "provinces": [
+        "Gauteng",
+        "Mpumalanga",
+        "Limpopo",
+        "North West",
+        "Free State"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 16.99,
+          "rewardPrice": 14.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 18.99,
+          "rewardPrice": 15.99,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 19.99,
+          "rewardPrice": 16.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "cabbage_each",
+      "name": "Large Fresh Green Cabbage",
+      "category": "Fruit & Veg",
+      "emoji": "🥬",
+      "pamphletTitle": "Fresh Produce Market Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 16.99,
+          "rewardPrice": 14.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 17.99,
+          "rewardPrice": 15.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 19.99,
+          "rewardPrice": 17.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "veg_combo_4pk",
+      "name": "4-Item Veg Combo (Potatoes, Onions, Carrots, Tomatoes)",
+      "category": "Fruit & Veg",
+      "emoji": "🥕",
+      "pamphletTitle": "Shoprite & Boxer Veg Combo",
+      "dealType": "Payday Deal",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 129.99,
+          "rewardPrice": 114.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 119.99,
+          "rewardPrice": 109.99,
+          "card": "boxer"
+        },
+        {
+          "store": "SPAR",
+          "price": 134.99,
+          "rewardPrice": 119.99,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "pilchards_400g",
+      "name": "400g Pilchards in Tomato (2-Pack)",
+      "category": "Pantry & Tins",
+      "emoji": "🐟",
+      "pamphletTitle": "Pantry & Tins Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 48.0,
+          "rewardPrice": 44.0,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 50.0,
+          "rewardPrice": 45.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 52.0,
+          "rewardPrice": 47.0,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "baked_beans_410g",
+      "name": "410g Baked Beans in Tomato (4-Pack)",
+      "category": "Pantry & Tins",
+      "emoji": "🥫",
+      "pamphletTitle": "Pantry & Tins Flyer",
+      "dealType": "Monthly Combo",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 54.0,
+          "rewardPrice": 48.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 52.0,
+          "rewardPrice": 48.0,
+          "card": "boxer"
+        },
+        {
+          "store": "SPAR",
+          "price": 58.0,
+          "rewardPrice": 52.0,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "rooibos_80s",
+      "name": "80s Rooibos Teabags",
+      "category": "Pantry & Tins",
+      "emoji": "🫖",
+      "pamphletTitle": "Hot Drinks Pamphlet",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 48.99,
+          "rewardPrice": 42.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 49.99,
+          "rewardPrice": 42.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 51.99,
+          "rewardPrice": 44.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "coffee_750g",
+      "name": "750g Instant Coffee Tin",
+      "category": "Pantry & Tins",
+      "emoji": "☕",
+      "pamphletTitle": "Hot Drinks Pamphlet",
+      "dealType": "Payday Deal",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 114.99,
+          "rewardPrice": 109.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 119.99,
+          "rewardPrice": 109.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 124.99,
+          "rewardPrice": 112.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "peanut_butter_400g",
+      "name": "400g Smooth Peanut Butter",
+      "category": "Pantry & Tins",
+      "emoji": "🥜",
+      "pamphletTitle": "Lunchbox Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 36.99,
+          "rewardPrice": 33.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 38.99,
+          "rewardPrice": 33.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 39.99,
+          "rewardPrice": 34.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "pasta_500g",
+      "name": "500g Macaroni / Spaghetti (2-Pack)",
+      "category": "Pantry & Tins",
+      "emoji": "🍝",
+      "pamphletTitle": "Pantry & Tins Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 32.0,
+          "rewardPrice": 29.0,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 34.0,
+          "rewardPrice": 30.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 36.0,
+          "rewardPrice": 31.0,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "mayo_750g",
+      "name": "750g Tangy Mayonnaise",
+      "category": "Pantry & Tins",
+      "emoji": "🫙",
+      "pamphletTitle": "Sauces & Condiments",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Checkers",
+          "price": 46.99,
+          "rewardPrice": 37.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Shoprite",
+          "price": 44.99,
+          "rewardPrice": 37.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 47.99,
+          "rewardPrice": 39.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "spices_combo",
+      "name": "200g BBQ + Chicken Spice Refill Combo",
+      "category": "Pantry & Tins",
+      "emoji": "🌶️",
+      "pamphletTitle": "Weekend Braai Pamphlet",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 34.99,
+          "rewardPrice": 31.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 36.99,
+          "rewardPrice": 32.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "colddrink_2l_2pk",
+      "name": "2L Fizzy Cold Drink (2-Pack Combo)",
+      "category": "Snacks & Drinks",
+      "emoji": "🥤",
+      "pamphletTitle": "Drinks & Braai Pamphlet",
+      "dealType": "3-Day Flash",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 44.0,
+          "rewardPrice": 39.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 42.0,
+          "rewardPrice": 40.0,
+          "card": "boxer"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 46.0,
+          "rewardPrice": 41.0,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "chips_120g_3pk",
+      "name": "120g Potato Chips (3-Pack Combo)",
+      "category": "Snacks & Drinks",
+      "emoji": "🍟",
+      "pamphletTitle": "Snack Attack Pamphlet",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 52.0,
+          "rewardPrice": 45.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 54.0,
+          "rewardPrice": 45.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 55.0,
+          "rewardPrice": 48.0,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "biscuits_200g_2pk",
+      "name": "200g Cream Biscuits (2-Pack)",
+      "category": "Snacks & Drinks",
+      "emoji": "🍪",
+      "pamphletTitle": "Snack Attack Pamphlet",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 28.0,
+          "rewardPrice": 25.0,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 30.0,
+          "rewardPrice": 26.0,
+          "card": "xtra"
+        },
+        {
+          "store": "SPAR",
+          "price": 32.0,
+          "rewardPrice": 28.0,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "juice_2l",
+      "name": "2L Fruit Juice Blend (2-Pack)",
+      "category": "Snacks & Drinks",
+      "emoji": "🧃",
+      "pamphletTitle": "Drinks & Braai Pamphlet",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Checkers",
+          "price": 64.0,
+          "rewardPrice": 54.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 66.0,
+          "rewardPrice": 56.0,
+          "card": "smart"
+        },
+        {
+          "store": "Shoprite",
+          "price": 62.0,
+          "rewardPrice": 54.0,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "energy_drink_4pk",
+      "name": "500ml Energy Drink (4-Pack)",
+      "category": "Snacks & Drinks",
+      "emoji": "⚡",
+      "pamphletTitle": "3-Day Flash Sale",
+      "dealType": "3-Day Flash",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 48.0,
+          "rewardPrice": 40.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 46.0,
+          "rewardPrice": 42.0,
+          "card": "boxer"
+        },
+        {
+          "store": "SPAR",
+          "price": 50.0,
+          "rewardPrice": 44.0,
+          "card": "spar"
+        }
+      ]
+    },
+    {
+      "id": "chocolates_2pk",
+      "name": "80g Milk Chocolate Slabs (2-Pack)",
+      "category": "Snacks & Drinks",
+      "emoji": "🍫",
+      "pamphletTitle": "Snack Attack Pamphlet",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Checkers",
+          "price": 42.0,
+          "rewardPrice": 34.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 44.0,
+          "rewardPrice": 36.0,
+          "card": "smart"
+        },
+        {
+          "store": "Shoprite",
+          "price": 40.0,
+          "rewardPrice": 34.0,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "washing_combo",
+      "name": "2kg Washing Powder + 750ml Dish Liquid",
+      "category": "Household & Cleaning",
+      "emoji": "🧺",
+      "pamphletTitle": "Cleaning & Home Pamphlet",
+      "dealType": "Monthly Combo",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 89.99,
+          "rewardPrice": 79.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 84.99,
+          "rewardPrice": 79.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Checkers",
+          "price": 94.99,
+          "rewardPrice": 82.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "tp_18roll",
+      "name": "18-Roll 2-Ply Toilet Paper",
+      "category": "Household & Cleaning",
+      "emoji": "🧻",
+      "pamphletTitle": "Cleaning & Home Pamphlet",
+      "dealType": "Payday Deal",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
       "stores": [
         {
           "store": "Checkers",
@@ -203,6 +1705,748 @@
           "price": 109.99,
           "rewardPrice": 104.99,
           "card": "boxer"
+        }
+      ]
+    },
+    {
+      "id": "bleach_750ml_2pk",
+      "name": "750ml Thick Bleach (2-Pack)",
+      "category": "Household & Cleaning",
+      "emoji": "🧽",
+      "pamphletTitle": "Cleaning & Home Pamphlet",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 49.99,
+          "rewardPrice": 42.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 47.99,
+          "rewardPrice": 42.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Checkers",
+          "price": 54.99,
+          "rewardPrice": 44.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "fabric_softener_2l",
+      "name": "2L Fabric Softener Refill",
+      "category": "Household & Cleaning",
+      "emoji": "🧺",
+      "pamphletTitle": "Cleaning & Home Pamphlet",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 59.99,
+          "rewardPrice": 49.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 64.99,
+          "rewardPrice": 52.99,
+          "card": "smart"
+        },
+        {
+          "store": "Boxer",
+          "price": 56.99,
+          "rewardPrice": 51.99,
+          "card": "boxer"
+        }
+      ]
+    },
+    {
+      "id": "black_bags_20s",
+      "name": "20-Pack Heavy Duty Refuse Bags",
+      "category": "Household & Cleaning",
+      "emoji": "🗑️",
+      "pamphletTitle": "Home Essentials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Boxer",
+          "price": 24.99,
+          "rewardPrice": 21.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Shoprite",
+          "price": 26.99,
+          "rewardPrice": 22.99,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "dish_liquid_750ml",
+      "name": "750ml Concentrated Dishwashing Liquid",
+      "category": "Household & Cleaning",
+      "emoji": "🫧",
+      "pamphletTitle": "Cleaning & Home Pamphlet",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 34.99,
+          "rewardPrice": 28.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 36.99,
+          "rewardPrice": 29.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 37.99,
+          "rewardPrice": 30.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "nappies_jumbo",
+      "name": "Baby Disposable Nappies Jumbo Pack",
+      "category": "Personal Care & Baby",
+      "emoji": "👶",
+      "pamphletTitle": "Baby Care Pamphlet",
+      "dealType": "Payday Deal",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 209.99,
+          "rewardPrice": 184.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 219.99,
+          "rewardPrice": 189.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 219.99,
+          "rewardPrice": 194.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "bath_soap_6pk",
+      "name": "175g Bath Soap (6-Pack)",
+      "category": "Personal Care & Baby",
+      "emoji": "🧼",
+      "pamphletTitle": "Personal Care Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 59.99,
+          "rewardPrice": 49.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 54.99,
+          "rewardPrice": 49.99,
+          "card": "boxer"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 62.99,
+          "rewardPrice": 54.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "toothpaste_100ml_2pk",
+      "name": "100ml Herbal / Fresh Toothpaste (2-Pack)",
+      "category": "Personal Care & Baby",
+      "emoji": "🪥",
+      "pamphletTitle": "Personal Care Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 36.0,
+          "rewardPrice": 29.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 38.0,
+          "rewardPrice": 30.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 34.0,
+          "rewardPrice": 30.0,
+          "card": "boxer"
+        }
+      ]
+    },
+    {
+      "id": "rollon_50ml_2pk",
+      "name": "50ml Anti-Perspirant Roll-On (2-Pack)",
+      "category": "Personal Care & Baby",
+      "emoji": "🧴",
+      "pamphletTitle": "Personal Care Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Checkers",
+          "price": 46.0,
+          "rewardPrice": 36.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Shoprite",
+          "price": 44.0,
+          "rewardPrice": 36.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 48.0,
+          "rewardPrice": 39.0,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "body_lotion_400ml",
+      "name": "400ml Nourishing Body Lotion",
+      "category": "Personal Care & Baby",
+      "emoji": "🧴",
+      "pamphletTitle": "Personal Care Specials",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 49.99,
+          "rewardPrice": 39.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 54.99,
+          "rewardPrice": 42.99,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 46.99,
+          "rewardPrice": 41.99,
+          "card": "boxer"
+        }
+      ]
+    },
+    {
+      "id": "airfryer_5l",
+      "name": "5L Digital Air Fryer (1500W)",
+      "category": "Gadgets & Appliances",
+      "emoji": "🍳",
+      "pamphletTitle": "Shoprite & Checkers Appliances Flyer",
+      "dealType": "Appliances & Tech",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 999.0,
+          "rewardPrice": 849.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 1099.0,
+          "rewardPrice": 899.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 1149.0,
+          "rewardPrice": 949.0,
+          "card": "smart"
+        },
+        {
+          "store": "Game",
+          "price": 1099.0,
+          "rewardPrice": 999.0,
+          "card": null
+        }
+      ]
+    },
+    {
+      "id": "microwave_20l",
+      "name": "20L Manual / Digital Microwave Oven",
+      "category": "Gadgets & Appliances",
+      "emoji": "📻",
+      "pamphletTitle": "Appliances & Kitchen Machines",
+      "dealType": "Appliances & Tech",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 1199.0,
+          "rewardPrice": 999.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 1299.0,
+          "rewardPrice": 1049.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 1249.0,
+          "rewardPrice": 1099.0,
+          "card": "smart"
+        },
+        {
+          "store": "Game",
+          "price": 1199.0,
+          "rewardPrice": 1099.0,
+          "card": null
+        }
+      ]
+    },
+    {
+      "id": "kettle_1_7l",
+      "name": "1.7L Cordless Stainless Steel Kettle",
+      "category": "Gadgets & Appliances",
+      "emoji": "🫖",
+      "pamphletTitle": "Appliances & Kitchen Machines",
+      "dealType": "Appliances & Tech",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 229.0,
+          "rewardPrice": 179.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 249.0,
+          "rewardPrice": 189.0,
+          "card": "xtra"
+        },
+        {
+          "store": "PEP Home",
+          "price": 199.99,
+          "rewardPrice": 199.99,
+          "card": null
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 239.0,
+          "rewardPrice": 199.0,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "steam_iron",
+      "name": "2200W Non-Stick Steam Iron",
+      "category": "Gadgets & Appliances",
+      "emoji": "💨",
+      "pamphletTitle": "Appliances & Kitchen Machines",
+      "dealType": "Appliances & Tech",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 249.0,
+          "rewardPrice": 199.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 269.0,
+          "rewardPrice": 209.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Game",
+          "price": 249.0,
+          "rewardPrice": 229.0,
+          "card": null
+        }
+      ]
+    },
+    {
+      "id": "hotplate_2plate",
+      "name": "2-Plate Spiral Electric Stove",
+      "category": "Gadgets & Appliances",
+      "emoji": "🔥",
+      "pamphletTitle": "Shoprite Appliances Pamphlet",
+      "dealType": "Appliances & Tech",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 349.0,
+          "rewardPrice": 299.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Boxer",
+          "price": 329.0,
+          "rewardPrice": 299.0,
+          "card": "boxer"
+        },
+        {
+          "store": "Game",
+          "price": 349.0,
+          "rewardPrice": 319.0,
+          "card": null
+        }
+      ]
+    },
+    {
+      "id": "powerbank_20000",
+      "name": "20,000mAh Fast-Charge Power Bank",
+      "category": "Gadgets & Appliances",
+      "emoji": "🔋",
+      "pamphletTitle": "PEP Cell & Tech Deals",
+      "dealType": "Appliances & Tech",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "PEP",
+          "price": 249.99,
+          "rewardPrice": 249.99,
+          "card": null
+        },
+        {
+          "store": "Checkers",
+          "price": 299.0,
+          "rewardPrice": 249.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 289.0,
+          "rewardPrice": 259.0,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "smartphone_4g",
+      "name": "4G Android Smartphone (64GB Dual SIM)",
+      "category": "Gadgets & Appliances",
+      "emoji": "📱",
+      "pamphletTitle": "PEP Cell & Shoprite Tech",
+      "dealType": "Appliances & Tech",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "PEP",
+          "price": 1199.0,
+          "rewardPrice": 1199.0,
+          "card": null
+        },
+        {
+          "store": "Ackermans",
+          "price": 1299.0,
+          "rewardPrice": 1249.0,
+          "card": null
+        },
+        {
+          "store": "Shoprite",
+          "price": 1299.0,
+          "rewardPrice": 1149.0,
+          "card": "xtra"
+        }
+      ]
+    },
+    {
+      "id": "bt_speaker",
+      "name": "Rechargeable Bluetooth Party Speaker + Mic",
+      "category": "Gadgets & Appliances",
+      "emoji": "🔊",
+      "pamphletTitle": "Tech & Audio Specials",
+      "dealType": "Appliances & Tech",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 499.0,
+          "rewardPrice": 399.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Checkers",
+          "price": 549.0,
+          "rewardPrice": 429.0,
+          "card": "xtra"
+        },
+        {
+          "store": "PEP",
+          "price": 449.99,
+          "rewardPrice": 449.99,
+          "card": null
+        }
+      ]
+    },
+    {
+      "id": "pedestal_fan",
+      "name": "40cm Standing Pedestal Fan (3-Speed)",
+      "category": "Gadgets & Appliances",
+      "emoji": "🌀",
+      "pamphletTitle": "Summer Cooling Pamphlet",
+      "dealType": "Appliances & Tech",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Shoprite",
+          "price": 329.0,
+          "rewardPrice": 279.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 349.0,
+          "rewardPrice": 299.0,
+          "card": "smart"
+        },
+        {
+          "store": "Game",
+          "price": 329.0,
+          "rewardPrice": 289.0,
+          "card": null
+        }
+      ]
+    },
+    {
+      "id": "smart_tv_32",
+      "name": "32-Inch HD Ready LED Smart TV",
+      "category": "Gadgets & Appliances",
+      "emoji": "📺",
+      "pamphletTitle": "Big Savings Tech Flyer",
+      "dealType": "Appliances & Tech",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "Checkers",
+          "price": 2499.0,
+          "rewardPrice": 2199.0,
+          "card": "xtra"
+        },
+        {
+          "store": "Pick n Pay",
+          "price": 2599.0,
+          "rewardPrice": 2299.0,
+          "card": "smart"
+        },
+        {
+          "store": "Game",
+          "price": 2399.0,
+          "rewardPrice": 2249.0,
+          "card": null
+        }
+      ]
+    },
+    {
+      "id": "kids_2pack",
+      "name": "Kids Summer T-Shirt & Shorts 2-Pack",
+      "category": "Clothing & Footwear",
+      "emoji": "👕",
+      "pamphletTitle": "PEP & Ackermans Family Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "PEP",
+          "price": 99.99,
+          "rewardPrice": 99.99,
+          "card": null
+        },
+        {
+          "store": "Ackermans",
+          "price": 129.99,
+          "rewardPrice": 119.99,
+          "card": null
+        },
+        {
+          "store": "Pick n Pay Clothing",
+          "price": 139.99,
+          "rewardPrice": 129.99,
+          "card": "smart"
+        }
+      ]
+    },
+    {
+      "id": "summer_sliders",
+      "name": "Moulded Sliders / Summer Sandals",
+      "category": "Clothing & Footwear",
+      "emoji": "🩴",
+      "pamphletTitle": "PEP & Ackermans Family Flyer",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "PEP",
+          "price": 59.99,
+          "rewardPrice": 59.99,
+          "card": null
+        },
+        {
+          "store": "Ackermans",
+          "price": 79.99,
+          "rewardPrice": 79.99,
+          "card": null
+        }
+      ]
+    },
+    {
+      "id": "mens_tees_2pk",
+      "name": "Men's Cotton Crew-Neck T-Shirts (2-Pack)",
+      "category": "Clothing & Footwear",
+      "emoji": "👕",
+      "pamphletTitle": "PEP & PnP Clothing",
+      "dealType": "Weekly Special",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "PEP",
+          "price": 119.99,
+          "rewardPrice": 119.99,
+          "card": null
+        },
+        {
+          "store": "Pick n Pay Clothing",
+          "price": 149.99,
+          "rewardPrice": 134.99,
+          "card": "smart"
+        },
+        {
+          "store": "Ackermans",
+          "price": 139.99,
+          "rewardPrice": 129.99,
+          "card": null
+        }
+      ]
+    },
+    {
+      "id": "school_shoes",
+      "name": "Unisex Tough Leather School Shoes",
+      "category": "Clothing & Footwear",
+      "emoji": "👞",
+      "pamphletTitle": "Back-to-School & Footwear",
+      "dealType": "Monthly Combo",
+      "provinces": [
+        "All"
+      ],
+      "validUntil": "Weekly Pamphlet",
+      "stores": [
+        {
+          "store": "PEP",
+          "price": 179.99,
+          "rewardPrice": 179.99,
+          "card": null
+        },
+        {
+          "store": "Ackermans",
+          "price": 199.99,
+          "rewardPrice": 189.99,
+          "card": null
+        },
+        {
+          "store": "Shoprite",
+          "price": 189.99,
+          "rewardPrice": 169.99,
+          "card": "xtra"
         }
       ]
     }

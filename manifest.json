@@ -1,10 +1,26 @@
 {
+  "id": "./",
   "name": "Mzansi Smart Basket",
   "short_name": "Mzansi Basket",
-  "description": "Live South African retail specials, store price comparator, rewards calculator & voice budget checklist.",
+  "description": "Live South African retail specials, store price comparator, rewards calculator and voice budget checklist.",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#f8fafc",
   "theme_color": "#ea580c",
-  "icons": []
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }

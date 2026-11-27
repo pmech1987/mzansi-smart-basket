@@ -1,0 +1,8 @@
+{
+  "appId": "za.co.mzansismartbasket.app",
+  "appName": "Mzansi Smart Basket",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  }
+}

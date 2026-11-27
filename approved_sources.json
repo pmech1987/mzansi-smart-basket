@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "notice": "No source is approved by default. The record is a human compliance gate, not a legal opinion. Only add a source after checking the exact source terms and obtaining written permission, an official feed/API agreement, source terms that expressly allow this commercial extraction, or a legal-advice-confirmed basis. The source must also permit transfer to the AI processor used by the pipeline.",
+  "example_not_approved": {
+    "source_id": "replace-with-a-source-id",
+    "label": "Replace with exact source name/description",
+    "status": "pending_review",
+    "files": [
+      "exact-local-file-name.pdf"
+    ],
+    "hosts": [
+      "exact.example.org"
+    ],
+    "allow_remote_download": false,
+    "allow_commercial_data_extraction": false,
+    "allow_ai_document_upload": false,
+    "allow_image_or_logo_display": false,
+    "permission_basis": "unconfirmed",
+    "evidence_reference": "",
+    "reviewed_by": "",
+    "reviewed_at": ""
+  },
+  "sources": []
+}

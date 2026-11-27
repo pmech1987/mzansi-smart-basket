@@ -1,0 +1,5 @@
+<!-- Add these entries inside <manifest>, above <application>, in android/app/src/main/AndroidManifest.xml -->
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<!-- Optional: add this only if you want GPS hardware to be a device requirement. -->
+<!-- <uses-feature android:name="android.hardware.location.gps" /> -->

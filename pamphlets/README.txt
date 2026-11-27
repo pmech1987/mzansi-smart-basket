@@ -1,0 +1,5 @@
+Add only source PDFs/images for which you have documented a valid basis to access and process them for the intended commercial purpose, including permission to send the original file to the configured AI processor. A free leaflet or public PDF does not itself grant a general commercial extraction or third-party processing licence. OCR is a tool, not permission.
+
+To process a local file, add its exact filename to an approved record in ../approved_sources.json with status=approved, allow_commercial_data_extraction=true, allow_ai_document_upload=true, a supported permission_basis, evidence_reference and reviewed_by. Set ENABLE_GEMINI_DOCUMENT_UPLOADS=true in the controlled workflow.
+
+Keep originals private and out of the public app. Do not republish flyer pages, product photos, logos, artwork, layout or a substantial third-party compilation unless licensed or legal counsel confirms an applicable legal basis. AI extraction creates candidates only; a human must verify the facts and separately confirm source rights before publishing.

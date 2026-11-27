@@ -1,0 +1,103 @@
+name: Prepare Retail Offer Candidates (Private Source Registry + Full Coverage Audit)
+
+on:
+  schedule:
+    - cron: '0 2 * * *'    # 04:00 South African time
+    - cron: '0 11 * * *'   # 13:00 South African time; resumes uncached/incomplete pages
+  push:
+    paths:
+      - 'pamphlets/**'
+      - 'pamphlet_urls.txt'
+      - 'approved_sources.json'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/update-prices.yml'
+  workflow_dispatch:
+
+# No write access is needed: candidates/reports are delivered as private workflow artifacts.
+permissions:
+  contents: read
+
+concurrency:
+  group: mzansi-pamphlet-extraction
+  cancel-in-progress: false
+
+jobs:
+  extract-specials:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Require a private repository for source and candidate data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          is_private="$(gh api "repos/${GITHUB_REPOSITORY}" --jq '.private')"
+          if [ "$is_private" != "true" ]; then
+            echo "This workflow handles source-rights evidence and unpublished retail candidates. Make the source repository private before enabling ingestion."
+            exit 1
+          fi
+
+      - name: Restore complete-page extraction cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .pamphlet_cache.json
+          key: ${{ runner.os }}-mzansi-page-cache-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-mzansi-page-cache-${{ github.ref_name }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Python and frontend regression tests
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+        run: |
+          python -m unittest discover -s tests -v
+          node tests/test_frontend_logic.mjs
+
+      - name: Extract candidate price fields from approved source files and URLs
+        id: extract
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          APPROVED_SOURCES_JSON: ${{ secrets.APPROVED_SOURCES_JSON }}
+          GEMINI_MODEL: 'gemini-2.5-flash'
+          GEMINI_AUDIT_MODEL: 'gemini-2.5-flash'
+          ENABLE_APPROVED_REMOTE_DOWNLOADS: ${{ vars.ENABLE_APPROVED_REMOTE_DOWNLOADS || 'false' }}
+          ENABLE_GEMINI_DOCUMENT_UPLOADS: ${{ vars.ENABLE_GEMINI_DOCUMENT_UPLOADS || 'false' }}
+          MAX_RUNTIME_MIN: '45'
+          MAX_SOURCE_FILE_MB: '100'
+        run: python scripts/extract_pamphlets.py
+
+      - name: Save completed page records for the next scheduled run
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .pamphlet_cache.json
+          key: ${{ runner.os }}-mzansi-page-cache-${{ github.ref_name }}-${{ github.run_id }}
+
+      - name: Upload private review materials
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mzansi-pamphlet-review-${{ github.run_id }}
+          path: |
+            coverage_report.json
+            deals_pending_review.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Fail job when extraction was incomplete
+        if: steps.extract.outcome == 'failure'
+        run: |
+          echo "Extraction did not complete every page. Download the workflow artifact, review coverage_report.json, and resume the incomplete pages. No candidate from this run may be published."
+          exit 1

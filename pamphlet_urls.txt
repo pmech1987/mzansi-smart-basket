@@ -1,0 +1,6 @@
+# Remote URLs are disabled by default.
+# Before adding one: review the exact source terms/permissions; record the
+# host and evidence in approved_sources.json; then enable
+# ENABLE_APPROVED_REMOTE_DOWNLOADS=true in a controlled workflow.
+# Use HTTPS direct PDF/image links only. Redirect destinations must also
+# be listed as approved hosts. Do not list retailer e-commerce/search pages.
